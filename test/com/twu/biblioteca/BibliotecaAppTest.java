@@ -31,10 +31,12 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void printsAListOfBooks() throws Exception {
+    public void printsAListOfTwoBooks() throws Exception {
         new BibliotecaApp().printBookList();
-        assertEquals("Book One\n", outContent.toString());
+        String result = "[Book One, Book Two]\n";
+        assertEquals(result, outContent.toString());
     }
+
 
 
 }
