@@ -29,4 +29,12 @@ public class BibliotecaAppTest {
         new BibliotecaApp().welcomeMessage();
         assertEquals("Welcome to the Biblioteca Experience\n", outContent.toString());
     }
+
+    @Test
+    public void printsAListOfBooks() throws Exception {
+        new BibliotecaApp().printBookList();
+        assertEquals("Book One\n", outContent.toString());
+    }
+
+
 }
