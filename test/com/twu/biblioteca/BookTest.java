@@ -9,12 +9,21 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by RachelSmith on 18/09/2016.
- */
+
 public class BookTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+    private Book testBookOne;
+    private Book testBookTwo;
+
+    private void createTestBookOne() {
+        testBookOne = new Book("Dune", "Frank Herbert", "1965");
+    }
+
+    private void createTestBookTwo() {
+        testBookTwo = new Book("Gormengast", "Mervyn Peake", "1950");
+    }
 
     @Before
     public void setUpStreams() {
@@ -26,28 +35,18 @@ public class BookTest {
         System.setOut(null);
     }
 
-    @Test
-    public void printsTitleOfBook() throws Exception {
-        Book book = new Book();
-        book.setTitle("Dune");
-        book.printTitle();
-        assertEquals("Title: Dune\n", outContent.toString());
-    }
 
     @Test
-    public void printsAuthorOfBook() throws Exception {
-        Book book = new Book();
-        book.setAuthor("Frank Herbert");
-        book.printAuthor();
-        assertEquals("Author: Frank Herbert\n", outContent.toString());
-    }
+    public void printsFullBookDetails() throws Exception {
+        createTestBookOne();
+        createTestBookTwo();
 
-    @Test
-    public void printsYearOfBook() throws Exception {
-        Book book = new Book();
-        book.setYear("1965");
-        book.printYear();
-        assertEquals("Year: 1965\n", outContent.toString());
+        String testResult = "Title: Dune\n" + "Author: Frank Herbert\n" + "Year: 1965\n"
+                + "Title: Gormengast\n" + "Author: Mervyn Peake\n" + "Year: 1950\n";
+
+        testBookOne.printInfo();
+        testBookTwo.printInfo();
+        assertEquals(testResult, outContent.toString());
     }
 
 }

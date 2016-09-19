@@ -1,36 +1,47 @@
 package com.twu.biblioteca;
 
-/**
- * Created by RachelSmith on 18/09/2016.
- */
+
 public class Book {
 
-    private String title;
-    private String author;
-    private String year;
+    private String bkTitle;
+    private String bkAuthor;
+    private String bkYear;
 
-
-    public void setTitle(String t) {
-        title = t;
+    public Book(String title, String author, String year) {
+        setTitle(title);
+        setAuthor(author);
+        setYear(year);
     }
 
-    public void printTitle() {
-        System.out.println("Title: " + title);
+
+    public void printInfo() {
+        printTitle();
+        printAuthor();
+        printYear();
     }
 
-    public void setAuthor(String a) {
-        author = a;
+
+    private void setTitle(String title) {
+        bkTitle = title;
+    }
+
+    private void setAuthor(String author) {
+        bkAuthor = author;
+    }
+
+    private void setYear(String year) {
+        bkYear = year;
+    }
+
+    private void printTitle() {
+        System.out.println("Title: " + bkTitle);
     }
 
     public void printAuthor() {
-        System.out.println("Author: " + author);
+        System.out.println("Author: " + bkAuthor);
     }
 
-    public void setYear(String y) {
-        year = y;
-    }
-
-    public void printYear() {
-        System.out.println("Year: " + year);
+    private void printYear() {
+        System.out.println("Year: " + bkYear);
     }
 }

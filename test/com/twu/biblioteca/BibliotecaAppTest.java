@@ -10,7 +10,19 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
+
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+
+import org.jmock.lib.legacy.ClassImposteriser;
+
+
+
 public class BibliotecaAppTest {
+
+    private Mockery context = new Mockery() {{
+        setImposteriser(ClassImposteriser.INSTANCE);
+    }};
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -32,9 +44,14 @@ public class BibliotecaAppTest {
 
     @Test
     public void printsAListOfTwoBooks() throws Exception {
-        new BibliotecaApp().printBookList();
-        String result = "[Book One, Book Two]\n";
-        assertEquals(result, outContent.toString());
+
+        final BookList books = context.mock(BookList.class);
+
+        context.checking(new Expectations() {{
+            oneOf (books).printBooks();
+        }});
+
+        new BibliotecaApp().printBookList(books);
     }
 
 
