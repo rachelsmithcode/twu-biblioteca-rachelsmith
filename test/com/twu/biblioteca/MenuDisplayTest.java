@@ -3,9 +3,14 @@ package com.twu.biblioteca;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 
 public class MenuDisplayTest {
+
+    @Rule
+    public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     private Mockery context = new Mockery() {{
         setImposteriser(ClassImposteriser.INSTANCE);
@@ -37,7 +42,8 @@ public class MenuDisplayTest {
 
         context.checking(new Expectations() {{
 
-            oneOf(getInput).returnString(); will(returnValue("Book List"));
+            oneOf(getInput).returnString();
+            will(returnValue("Book List"));
             oneOf(bookList).printBooks();
 
         }});
@@ -54,9 +60,11 @@ public class MenuDisplayTest {
 
         context.checking(new Expectations() {{
 
-            oneOf(getInput).returnString(); will(returnValue("I am a cat"));
+            oneOf(getInput).returnString();
+            will(returnValue("I am a cat"));
             oneOf(console).message("Please select a valid item!");
-            oneOf(getInput).returnString(); will(returnValue("Book List"));
+            oneOf(getInput).returnString();
+            will(returnValue("Book List"));
             oneOf(bookList).printBooks();
 
         }});
@@ -65,7 +73,7 @@ public class MenuDisplayTest {
     }
 
     @Test
-    public void returnsErrorMessageToAnyOtherStringRequest() throws Exception {
+    public void acceptsQuitAsACommandAndExits() throws Exception {
 
         final GetInput getInput = context.mock(GetInput.class);
         final Console console = context.mock(Console.class);
@@ -73,15 +81,12 @@ public class MenuDisplayTest {
 
         context.checking(new Expectations() {{
 
-            oneOf(getInput).returnString(); will(returnValue("I am a cat"));
-            oneOf(console).message("Please select a valid item!");
-            oneOf(getInput).returnString(); will(returnValue("Book List"));
-            oneOf(bookList).printBooks();
-
+            oneOf(getInput).returnString();
+            will(returnValue("Quit"));
         }});
 
+        exit.expectSystemExit();
         new MenuDisplay(console).selectItem(getInput, bookList);
+
     }
-
-
 }

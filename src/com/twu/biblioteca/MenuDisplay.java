@@ -31,11 +31,13 @@ public class MenuDisplay {
         setBookList(bkList);
         String string = getInput.returnString();
 
-        if (string != "Book List") {
-            console.message("Please select a valid item!");
-            selectItem(getInput, bookList);
+        if (string == "Quit") {
+            System.exit(1);
         } else if (string == "Book List") {
             bookList.printBooks();
+        } else {
+            console.message("Please select a valid item!");
+            selectItem(getInput, bookList);
         }
     }
 }

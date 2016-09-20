@@ -17,5 +17,6 @@
     <orderEntry type="library" name="org.jmock:jmock-legacy:2.8.0" level="project" />
     <orderEntry type="library" name="cglib:cglib-nodep:2.1_3" level="project" />
     <orderEntry type="library" name="org.objenesis:objenesis:1.0" level="project" />
+    <orderEntry type="library" name="com.github.stefanbirkner:system-rules:1.16.0" level="project" />
   </component>
 </module>
