@@ -64,4 +64,24 @@ public class MenuDisplayTest {
         new MenuDisplay(console).selectItem(getInput, bookList);
     }
 
+    @Test
+    public void returnsErrorMessageToAnyOtherStringRequest() throws Exception {
+
+        final GetInput getInput = context.mock(GetInput.class);
+        final Console console = context.mock(Console.class);
+        final BookList bookList = context.mock(BookList.class);
+
+        context.checking(new Expectations() {{
+
+            oneOf(getInput).returnString(); will(returnValue("I am a cat"));
+            oneOf(console).message("Please select a valid item!");
+            oneOf(getInput).returnString(); will(returnValue("Book List"));
+            oneOf(bookList).printBooks();
+
+        }});
+
+        new MenuDisplay(console).selectItem(getInput, bookList);
+    }
+
+
 }
