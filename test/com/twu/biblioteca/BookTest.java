@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,13 +19,18 @@ public class BookTest {
 
     private Book testBookOne;
     private Book testBookTwo;
+    Console console;
+
+    private Mockery context = new Mockery() {{
+        setImposteriser(ClassImposteriser.INSTANCE);
+    }};
 
     private void createTestBookOne() {
-        testBookOne = new Book("Dune", "Frank Herbert", "1965");
+        testBookOne = new Book(console, "Dune", "Frank Herbert", "1965");
     }
 
     private void createTestBookTwo() {
-        testBookTwo = new Book("Gormengast", "Mervyn Peake", "1950");
+        testBookTwo = new Book(console, "Gormengast", "Mervyn Peake", "1950");
     }
 
     @Before
@@ -38,15 +46,22 @@ public class BookTest {
 
     @Test
     public void printsFullBookDetails() throws Exception {
+        console = context.mock(Console.class);
         createTestBookOne();
         createTestBookTwo();
 
-        String testResult = "Title: Dune\n" + "Author: Frank Herbert\n" + "Year: 1965\n"
-                + "Title: Gormengast\n" + "Author: Mervyn Peake\n" + "Year: 1950\n";
+        context.checking(new Expectations() {{
+            oneOf (console).message("Title: Dune");
+            oneOf (console).message("Author: Frank Herbert");
+            oneOf (console).message("Year: 1965");
+            oneOf (console).message("Title: Gormengast");
+            oneOf (console).message("Author: Mervyn Peake");
+            oneOf (console).message("Year: 1950");
+        }});
 
         testBookOne.printInfo();
         testBookTwo.printInfo();
-        assertEquals(testResult, outContent.toString());
+
     }
 
 }

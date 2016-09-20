@@ -6,8 +6,10 @@ public class Book {
     private String bkTitle;
     private String bkAuthor;
     private String bkYear;
+    private Console console;
 
-    public Book(String title, String author, String year) {
+    public Book(Console con, String title, String author, String year) {
+        console = con;
         setTitle(title);
         setAuthor(author);
         setYear(year);
@@ -34,14 +36,14 @@ public class Book {
     }
 
     private void printTitle() {
-        System.out.println("Title: " + bkTitle);
+        console.message("Title: " + bkTitle);
     }
 
     public void printAuthor() {
-        System.out.println("Author: " + bkAuthor);
+        console.message("Author: " + bkAuthor);
     }
 
     private void printYear() {
-        System.out.println("Year: " + bkYear);
+        console.message("Year: " + bkYear);
     }
 }
