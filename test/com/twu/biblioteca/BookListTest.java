@@ -43,6 +43,8 @@ public class BookListTest {
 
         context.checking(new Expectations() {{
 
+            exactly(2).of(bookItem).checkedOut();
+            will(returnValue(false));
             exactly(2).of(bookItem).printDetails();
 
         }});
@@ -87,7 +89,32 @@ public class BookListTest {
 
         context.checking(new Expectations() {{
 
+            exactly(2).of(bookItem).checkedOut();
+            will(returnValue(false));
             exactly(2).of(bookItem).printDetails();
+
+        }});
+
+        new BookList(testList).select();
+    }
+
+    @Test
+    public void aCheckedOutBookShouldNotAppearWhenBookListIsSelected() throws Exception {
+
+        final BookItem bookItem = context.mock(BookItem.class);
+
+        ArrayList<BookItem> testList = new ArrayList();
+        testList.add(bookItem);
+        testList.add(bookItem);
+
+        context.checking(new Expectations() {{
+
+            oneOf(bookItem).checkedOut();
+            will(returnValue(true));
+            oneOf(bookItem).checkedOut();
+            will(returnValue(false));
+
+            oneOf(bookItem).printDetails();
 
         }});
 

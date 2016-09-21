@@ -25,7 +25,9 @@ public class BookList extends MenuItem implements List {
 
         for (int i = 0; i < bookItemList.size(); i++) {
             BookItem item = bookItemList.get(i);
-            item.printDetails();
+            if (!item.checkedOut()) {
+                item.printDetails();
+            }
         }
     }
 
