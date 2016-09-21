@@ -27,8 +27,9 @@ public class BibliotecaApp {
         createMenuItemList();
         MenuList menulist = new MenuList(menuItems);
         menulist.printList();
-        menulist.selectItem(getInput);
-
+        while (true) {
+            menulist.selectItem(getInput);
+        }
     }
 
     private void createMenuItemList() {

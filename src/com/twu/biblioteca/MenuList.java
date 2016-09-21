@@ -33,15 +33,16 @@ public class MenuList extends ConsoleObject implements List {
 
         for (int i = 0; i < items.size(); i++) {
             MenuItem item = items.get(i);
-            if (input.toLowerCase() != item.returnName().toLowerCase()) {
+            String itemName = item.returnName();
+            if (input == itemName) {
                 item.select();
                 validEntry = true;
+                break;
             }
         }
         if (!validEntry) {
             printMessage("Please select a valid item!");
         }
-        selectItem(getInput);
     }
 
     private String requestInput() {
