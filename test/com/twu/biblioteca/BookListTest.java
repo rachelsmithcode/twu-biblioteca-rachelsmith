@@ -213,5 +213,98 @@ public class BookListTest {
 
     }
 
+    @Test
+    public void canReturnABookByTitleFromBooksInArrayList() throws Exception {
+
+        final BookItem bookItem = context.mock(BookItem.class);
+
+        ArrayList<BookItem> testList = new ArrayList();
+        testList.add(bookItem);
+        testList.add(bookItem);
+
+        context.checking(new Expectations() {{
+
+            oneOf(bookItem).returnName();
+            will(returnValue("Gormengast"));
+            oneOf(bookItem).returnName();
+            will(returnValue("Dune"));
+            oneOf(bookItem).beReturned();
+            oneOf(bookItem).checkedOut();
+            will(returnValue(true));
+
+        }});
+
+        new BookList(testList).returnBook("Dune");
+    }
+
+    @Test
+    public void printsConfirmationMessageToConsoleOnSuccessfulReturn() throws Exception {
+
+        final BookItem bookItem = context.mock(BookItem.class);
+
+        ArrayList<BookItem> testList = new ArrayList();
+        testList.add(bookItem);
+        testList.add(bookItem);
+
+        context.checking(new Expectations() {{
+
+            oneOf(bookItem).returnName();
+            will(returnValue("Gormengast"));
+            oneOf(bookItem).returnName();
+            will(returnValue("Dune"));
+            oneOf(bookItem).beReturned();
+            oneOf(bookItem).checkedOut();
+            will(returnValue(true));
+
+        }});
+
+        new BookList(testList).returnBook("Dune");
+        assertEquals("Thank you for returning the book.\n", outContent.toString());
+
+    }
+
+    @Test
+    public void printsErrorMessageIfReturnedBookWasNotCheckedOut() throws Exception {
+
+        final BookItem bookItem = context.mock(BookItem.class);
+
+        ArrayList<BookItem> testList = new ArrayList();
+        testList.add(bookItem);
+
+        context.checking(new Expectations() {{
+
+            oneOf(bookItem).returnName();
+            will(returnValue("Dune"));
+            oneOf(bookItem).checkedOut();
+            will(returnValue(false));
+
+        }});
+
+        new BookList(testList).returnBook("Dune");
+        assertEquals("That is not a valid book to return.\n", outContent.toString());
+
+    }
+
+    @Test
+    public void printsErrorMessageIfReturnedBookTitleIsNotInTheArray() throws Exception {
+
+        final BookItem bookItem = context.mock(BookItem.class);
+
+        ArrayList<BookItem> testList = new ArrayList();
+        testList.add(bookItem);
+
+        context.checking(new Expectations() {{
+
+            oneOf(bookItem).returnName();
+            will(returnValue("Dune"));
+
+        }});
+
+        new BookList(testList).returnBook("I am a cat");
+        assertEquals("That is not a valid book to return.\n", outContent.toString());
+
+    }
+
+
 }
 

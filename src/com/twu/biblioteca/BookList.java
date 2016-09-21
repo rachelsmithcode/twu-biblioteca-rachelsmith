@@ -50,6 +50,25 @@ public class BookList extends MenuItem implements List {
 
     }
 
+    public void returnBook(String name) {
+
+        Boolean validBookChoice = false;
+
+        for (int i = 0; i < bookItemList.size(); i++) {
+            BookItem book = bookItemList.get(i);
+            if (book.returnName() == name && book.checkedOut()) {
+                book.beReturned();
+                printMessage("Thank you for returning the book.");
+                validBookChoice = true;
+                break;
+            }
+        }
+        if (!validBookChoice) {
+            printMessage("That is not a valid book to return.");
+        }
+
+    }
+
     @Override
     public void printName() {
 

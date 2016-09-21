@@ -52,6 +52,10 @@ public class BookItem extends ConsoleObject {
        isCheckedOut = true;
     }
 
+    public void beReturned() {
+        isCheckedOut = false;
+    }
+
     public Boolean checkedOut() {
         return isCheckedOut;
     }

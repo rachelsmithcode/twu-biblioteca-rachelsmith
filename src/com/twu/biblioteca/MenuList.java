@@ -61,6 +61,22 @@ public class MenuList extends ConsoleObject implements List {
         }
     }
 
+    public void returnItem(GetInput getInput) {
+
+
+        saveGetInput(getInput);
+        String input = requestInput();
+
+        for (int i = 0; i < items.size(); i++) {
+            MenuItem bookList = items.get(i);
+            String itemName = bookList.returnName();
+            if ("Book List" == itemName) {
+                bookList.returnBook(input);
+                break;
+            }
+        }
+    }
+
     private String requestInput() {
         return getInput.returnString();
     }

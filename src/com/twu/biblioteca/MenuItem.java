@@ -10,5 +10,6 @@ abstract public class MenuItem extends ConsoleObject {
 
     abstract public void checkOut(String name);
 
+    abstract public void returnBook(String name);
 
 }

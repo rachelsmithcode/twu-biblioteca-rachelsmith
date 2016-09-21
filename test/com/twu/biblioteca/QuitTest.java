@@ -68,5 +68,13 @@ public class QuitTest {
 
     }
 
+    @Test
+    public void quitCannotBeReturned() throws Exception {
+
+        new Quit().returnBook("Quit");
+        assertEquals("Invalid Selection\n", outContent.toString());
+
+    }
+
 }
 

@@ -27,4 +27,9 @@ public class Quit extends MenuItem {
     public void checkOut(String name) {
         printMessage("Invalid Selection");
     }
+
+    @Override
+    public void returnBook(String name) {
+        printMessage("Invalid Selection");
+    }
 }

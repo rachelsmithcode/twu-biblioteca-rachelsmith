@@ -74,5 +74,14 @@ public class BookItemTest {
         assertEquals(true, (testItemOne.checkedOut()));
     }
 
+    @Test
+    public void bookCanBeReturned() throws Exception {
+
+        createTestBookOne();
+        testItemOne.beReturned();
+
+        assertEquals(false, (testItemOne.checkedOut()));
+    }
+
 
 }

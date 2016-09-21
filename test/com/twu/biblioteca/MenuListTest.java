@@ -149,6 +149,29 @@ public class MenuListTest {
         new MenuList(testList).checkOutItem(getInput);
     }
 
+    @Test
+    public void youCanReturnABookFromTheBookListArrayInTheMenuItemArrayList() throws Exception {
+
+        final MenuItem menuItem = context.mock(MenuItem.class);
+        final GetInput getInput = context.mock(GetInput.class);
+
+        ArrayList<MenuItem> testList = new ArrayList<MenuItem>();
+        testList.add(menuItem);
+        testList.add(menuItem);
+
+        context.checking(new Expectations() {{
+
+            oneOf(getInput).returnString();
+            will(returnValue("Dune"));
+            oneOf(menuItem).returnName();
+            will(returnValue("Book List"));
+            oneOf(menuItem).returnBook("Dune");
+
+        }});
+
+        new MenuList(testList).returnItem(getInput);
+    }
+
 
 
 }
