@@ -1,19 +1,12 @@
 package com.twu.biblioteca;
 
-/**
- * Created by RachelSmith on 19/09/2016.
- */
-public class MenuItem {
+abstract public class MenuItem extends ConsoleObject {
 
-    Console console;
-    String itemDescription;
+    abstract public void printName();
 
-    public MenuItem(Console con, String description) {
-        console = con;
-        itemDescription = description;
-    }
+    abstract public String returnName();
 
-    public void printDescription() {
-        console.message(itemDescription);
-    }
+    abstract public void select();
+
+
 }

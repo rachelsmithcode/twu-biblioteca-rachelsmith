@@ -1,46 +1,55 @@
 package com.twu.biblioteca;
 
 
-import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
-
-import static java.lang.System.in;
 
 public class BibliotecaApp {
 
-    private Console console;
     private Welcome welcome;
-    private MenuDisplay menuDisplay;
-    private BookList bookList;
     private GetInput getInput;
 
-    ArrayList<MenuItem> menuItems;
+    ArrayList<MenuItem> menuItems = new ArrayList();
+    ArrayList<BookItem> bookItems = new ArrayList();
 
     public void main(String[] args) {
-        new BibliotecaApp(new Console(), new Welcome(), new BookList(), new GetInput(), new MenuDisplay(console)).launch();
+        new BibliotecaApp(new Welcome(), new GetInput()).launch();
     }
 
-    public BibliotecaApp(Console con, Welcome wel, BookList bkList, GetInput input, MenuDisplay menu) {
-        console = con;
+    public BibliotecaApp(Welcome wel, GetInput input) {
         welcome = wel;
-        menuDisplay = menu;
-        bookList = bkList;
         getInput = input;
     }
 
 
     private void launch() {
-        welcome.printWelcome(console);
-
-        for (int i = 0; i < menuItems.size(); i++) {
-            MenuItem item = menuItems.get(i);
-            menuDisplay.printItems(item);
-            menuDisplay.selectItem(getInput, bookList);
-        }
-
-
+        welcome.printWelcome();
+        createBookItemList();
+        createMenuItemList();
+        MenuList menulist = new MenuList(menuItems);
+        menulist.printList();
+        menulist.selectItem(getInput);
 
     }
+
+    private void createMenuItemList() {
+        menuItems.add(new Quit());
+        menuItems.add(new BookList(bookItems));
+    }
+
+    private void createBookItemList() {
+        bookItems.add(createTestBookOne());
+        bookItems.add(createTestBookTwo());
+    }
+
+    private BookItem createTestBookOne() {
+        return new BookItem("Dune", "Frank Herbert", "1965");
+    }
+
+    private BookItem createTestBookTwo() {
+        return new BookItem("Gormengast", "Mervyn Peake", "1950");
+    }
+
+
+
 
 }

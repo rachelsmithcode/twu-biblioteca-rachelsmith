@@ -2,17 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9709a20d-efe1-4950-bb24-6895cd42cf4f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BookItem.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/MenuList.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Book.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BookList.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Console.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/MenuDisplay.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BookTest$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/BookTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/ConsoleTest.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/MenuDisplayTest$1.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/MenuDisplayTest$2.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/MenuDisplayTest$3.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/MenuDisplayTest$4.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/MenuDisplayTest.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/GetInput.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/GetInput.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/MenuItemTest$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/WelcomeTest$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/GetInput.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/MenuDisplay.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BookList.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/List.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Console.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/ConsoleObject.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BookListTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/ListTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BookItemTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/ConsoleTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/ConsoleObjectTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuDisplayTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuListTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/MenuItem.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/MenuItem.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Welcome.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/Welcome.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/MenuItemTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/MenuItemTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/WelcomeTest.class" afterPath="$PROJECT_DIR$/out/test/biblioteca/com/twu/biblioteca/WelcomeTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/biblioteca.iml" afterPath="$PROJECT_DIR$/biblioteca.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/GetInput.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/GetInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/MenuDisplay.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/MenuDisplay.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuDisplayTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuDisplayTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/MenuItem.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/MenuItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Welcome.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Welcome.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuItemTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuItemTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeTest.java" />
     </list>
     <ignored path="biblioteca.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,122 +59,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MenuDisplayTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/MenuDisplayTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConsoleTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ConsoleTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BibliotecaAppTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuDisplay.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/MenuDisplay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding>
-                <element signature="e#162#163#0" expanded="true" />
-                <element signature="e#191#192#0" expanded="true" />
-                <element signature="e#236#237#0" expanded="true" />
-                <element signature="e#268#269#0" expanded="true" />
-                <element signature="e#317#318#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetInput.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/GetInput.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookListTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookListTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BookList.java">
+      <file leaf-file-name="MenuListTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/MenuListTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
               <folding>
-                <element signature="e#124#130#0" expanded="true" />
+                <element signature="e#729#739#0" expanded="true" />
+                <element signature="e#1248#1258#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Book.java">
+      <file leaf-file-name="MenuList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/MenuList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-              <folding>
-                <element signature="e#564#565#0" expanded="true" />
-                <element signature="e#597#598#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuItemTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/MenuItemTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="25" selection-end-column="62" />
+            <state relative-caret-position="240">
+              <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuItem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/MenuItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -158,6 +89,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -174,8 +106,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ExampleTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BookList.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BookListTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/StringAsker.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/StringAskerTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/consoleDisplayTest.java" />
@@ -183,21 +113,37 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/consoleMessage.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/consoleMessageTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/ConsoleMessage.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Welcome.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/MenuTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/InputToStringConverterTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/InputTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/MenuItem.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/InputToStringConverter.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ConsoleTest.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/MenuDisplayTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/MenuItemTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/ConsoleObject.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ConsoleObjectTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/MenuDisplay.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ItemTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Item.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/LibraryItem.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/MenuItem.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BookList.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BookItem.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BookItemTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/List.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/GetInput.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Quit.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/ListTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Welcome.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/GetInput.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/MenuDisplayTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/MenuDisplay.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BookListTest.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeTest.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/QuitTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/MenuList.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/MenuListTest.java" />
       </list>
     </option>
   </component>
@@ -293,20 +239,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="biblioteca" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TWU_Biblioteca-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -330,33 +262,7 @@
       <recent name="com.twu.biblioteca" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MenuDisplayTest">
-    <configuration default="false" name="MenuDisplayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="biblioteca" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.MenuDisplayTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList">
     <configuration default="false" name="BookListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -383,7 +289,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MenuDisplayTest.returnsErrorMessageToAnyOtherStringRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="WelcomeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.*" />
@@ -394,9 +300,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.MenuDisplayTest" />
-      <option name="METHOD_NAME" value="returnsErrorMessageToAnyOtherStringRequest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.WelcomeTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -409,7 +315,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MenuDisplayTest.printsMenuOptions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="QuitTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.*" />
@@ -420,9 +326,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.MenuDisplayTest" />
-      <option name="METHOD_NAME" value="printsMenuOptions" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.QuitTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -435,7 +341,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MenuDisplayTest.acceptsQuitAsACommandAndExits" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="MenuListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.*" />
@@ -446,8 +352,34 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.MenuDisplayTest" />
-      <option name="METHOD_NAME" value="acceptsQuitAsACommandAndExits" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.MenuListTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="biblioteca" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.MenuListTest" />
+      <option name="METHOD_NAME" value="youCanSelectTheBookListFromTheMenuItemArrayList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -706,24 +638,27 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.MenuDisplayTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BookListTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MenuDisplayTest.returnsErrorMessageToAnyOtherStringRequest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MenuDisplayTest.printsMenuOptions" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MenuDisplayTest.acceptsQuitAsACommandAndExits" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.BookListTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.WelcomeTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.QuitTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MenuListTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MenuDisplayTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MenuDisplayTest.acceptsQuitAsACommandAndExits" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MenuDisplayTest.returnsErrorMessageToAnyOtherStringRequest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MenuDisplayTest.printsMenuOptions" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MenuListTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.QuitTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.WelcomeTest" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.BookListTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -736,65 +671,65 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MenuDisplayTest - 2016.09.20 at 00h 57m 50s.xml">
-      <configuration name="MenuDisplayTest" configurationId="JUnit" />
+    <history-entry file="MenuListTest - 2016.09.21 at 02h 31m 33s.xml">
+      <configuration name="MenuListTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuDisplayTest - 2016.09.20 at 01h 38m 43s.xml">
-      <configuration name="MenuDisplayTest" configurationId="JUnit" />
+    <history-entry file="MenuListTest_youCanSelectTheBookListFromTheMenuItemArrayList - 2016.09.21 at 02h 33m 17s.xml">
+      <configuration name="MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuDisplayTest - 2016.09.20 at 16h 20m 57s.xml">
-      <configuration name="MenuDisplayTest" configurationId="JUnit" />
+    <history-entry file="MenuListTest_youCanSelectTheBookListFromTheMenuItemArrayList - 2016.09.21 at 02h 33m 59s.xml">
+      <configuration name="MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuDisplayTest_acceptsQuitAsACommandAndExits - 2016.09.20 at 15h 54m 22s.xml">
-      <configuration name="MenuDisplayTest.acceptsQuitAsACommandAndExits" configurationId="JUnit" />
+    <history-entry file="MenuListTest_youCanSelectTheBookListFromTheMenuItemArrayList - 2016.09.21 at 02h 40m 33s.xml">
+      <configuration name="MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuDisplayTest_acceptsQuitAsACommandAndExits - 2016.09.20 at 16h 20m 51s.xml">
-      <configuration name="MenuDisplayTest.acceptsQuitAsACommandAndExits" configurationId="JUnit" />
+    <history-entry file="MenuListTest_youCanSelectTheBookListFromTheMenuItemArrayList - 2016.09.21 at 02h 41m 31s.xml">
+      <configuration name="MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuDisplayTest_printsMenuOptions - 2016.09.20 at 01h 36m 45s.xml">
-      <configuration name="MenuDisplayTest.printsMenuOptions" configurationId="JUnit" />
+    <history-entry file="MenuListTest_youCanSelectTheBookListFromTheMenuItemArrayList - 2016.09.21 at 02h 41m 54s.xml">
+      <configuration name="MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuDisplayTest_returnsErrorMessageToAnyOtherStringRequest - 2016.09.20 at 00h 44m 32s.xml">
-      <configuration name="MenuDisplayTest.returnsErrorMessageToAnyOtherStringRequest" configurationId="JUnit" />
+    <history-entry file="MenuListTest_youCanSelectTheBookListFromTheMenuItemArrayList - 2016.09.21 at 02h 42m 10s.xml">
+      <configuration name="MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuDisplayTest_returnsErrorMessageToAnyOtherStringRequest - 2016.09.20 at 01h 33m 44s.xml">
-      <configuration name="MenuDisplayTest.returnsErrorMessageToAnyOtherStringRequest" configurationId="JUnit" />
+    <history-entry file="MenuListTest_youCanSelectTheBookListFromTheMenuItemArrayList - 2016.09.21 at 02h 42m 24s.xml">
+      <configuration name="MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuDisplayTest_returnsErrorMessageToAnyOtherStringRequest - 2016.09.20 at 01h 36m 37s.xml">
-      <configuration name="MenuDisplayTest.returnsErrorMessageToAnyOtherStringRequest" configurationId="JUnit" />
+    <history-entry file="MenuListTest_youCanSelectTheBookListFromTheMenuItemArrayList - 2016.09.21 at 02h 43m 54s.xml">
+      <configuration name="MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MenuDisplayTest_returnsErrorMessageToAnyOtherStringRequest - 2016.09.20 at 01h 38m 32s.xml">
-      <configuration name="MenuDisplayTest.returnsErrorMessageToAnyOtherStringRequest" configurationId="JUnit" />
+    <history-entry file="MenuListTest_youCanSelectTheBookListFromTheMenuItemArrayList - 2016.09.21 at 02h 44m 47s.xml">
+      <configuration name="MenuListTest.youCanSelectTheBookListFromTheMenuItemArrayList" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16319445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33857316" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16319445" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33857316" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -819,14 +754,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Welcome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="64" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/InputTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-240">
@@ -843,27 +770,145 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/ConsoleObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BookItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#467#468#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ConsoleObjectTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/GetInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/MenuItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Quit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Welcome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#1038#1039#0" expanded="true" />
+            <element signature="e#1106#1107#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1223#1224#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeTest.java">
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookItemTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="225">
+          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="71" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="e#622#623#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Console.java">
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookListTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="71" column="39" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BookList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ItemTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ListTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
@@ -871,112 +916,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookTest.java">
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="285">
+          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java">
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/QuitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="810">
+          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/MenuItemTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="25" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/MenuItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookListTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/MenuList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        <state relative-caret-position="240">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/MenuDisplayTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/GetInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/ConsoleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding>
-            <element signature="e#564#565#0" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BookList.java">
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/MenuListTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="60" column="43" selection-start-line="60" selection-start-column="43" selection-end-line="60" selection-end-column="43" />
           <folding>
-            <element signature="e#124#130#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/MenuDisplay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="e#162#163#0" expanded="true" />
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#317#318#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#729#739#0" expanded="true" />
+            <element signature="e#1248#1258#0" expanded="true" />
           </folding>
         </state>
       </provider>

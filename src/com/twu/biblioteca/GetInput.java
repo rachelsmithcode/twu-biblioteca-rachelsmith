@@ -2,7 +2,6 @@ package com.twu.biblioteca;
 
 import java.util.Scanner;
 
-
 public class GetInput {
 
     public String returnString() {

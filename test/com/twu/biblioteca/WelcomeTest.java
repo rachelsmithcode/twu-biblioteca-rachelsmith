@@ -3,26 +3,36 @@ package com.twu.biblioteca;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
 
 public class WelcomeTest {
 
-    private Mockery context = new Mockery() {{
-        setImposteriser(ClassImposteriser.INSTANCE);
-    }};
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+    @Before
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+    }
+
+    @After
+    public void cleanUpStreams() {
+        System.setOut(null);
+    }
+
 
     @Test
-    public void printsAWelcomeMessage() throws Exception {
+    public void printsWelcomeMessageToConsole() throws Exception {
 
-        final Console console = context.mock(Console.class);
+        new Welcome().printWelcome();
+        assertEquals("Welcome to the Biblioteca Experience\n", outContent.toString());
 
-        context.checking(new Expectations() {{
-            oneOf (console).message("Welcome to the Biblioteca Experience");
-        }});
-
-        new Welcome().printWelcome(console);
     }
 }
