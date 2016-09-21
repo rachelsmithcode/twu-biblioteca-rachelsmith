@@ -8,7 +8,7 @@ public class BibliotecaApp {
     private Welcome welcome;
     private GetInput getInput;
 
-    ArrayList<MenuItem> menuItems = new ArrayList();
+    ArrayList<MenuOption> menuOptions = new ArrayList();
     ArrayList<BookItem> bookItems = new ArrayList();
 
     public void main(String[] args) {
@@ -25,7 +25,7 @@ public class BibliotecaApp {
         welcome.printWelcome();
         createBookItemList();
         createMenuItemList();
-        MenuList menulist = new MenuList(menuItems);
+        Menu menulist = new Menu(menuOptions);
         menulist.printList();
         while (true) {
             menulist.selectItem(getInput);
@@ -33,8 +33,8 @@ public class BibliotecaApp {
     }
 
     private void createMenuItemList() {
-        menuItems.add(new Quit());
-        menuItems.add(new BookList(bookItems));
+        menuOptions.add(new Quit());
+        menuOptions.add(new BookList(bookItems));
     }
 
     private void createBookItemList() {

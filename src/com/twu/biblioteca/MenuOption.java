@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-abstract public class MenuItem extends ConsoleObject {
+abstract public class MenuOption extends ConsoleObject {
 
     abstract public void printName();
 
@@ -8,7 +8,7 @@ abstract public class MenuItem extends ConsoleObject {
 
     abstract public void select();
 
-    abstract public void checkOut(String name);
+    abstract public void checkOutBook(String name);
 
     abstract public void returnBook(String name);
 

@@ -1,16 +1,13 @@
 package com.twu.biblioteca;
 
-/**
- * Created by RachelSmith on 20/09/2016.
- */
-public class Quit extends MenuItem {
+public class Quit extends MenuOption {
 
 
     private String itemName = "Quit";
 
     @Override
     public void printName() {
-        printMessage(itemName);
+        printToConsole(itemName);
     }
 
     @Override
@@ -24,12 +21,12 @@ public class Quit extends MenuItem {
     }
 
     @Override
-    public void checkOut(String name) {
-        printMessage("Invalid Selection");
+    public void checkOutBook(String name) {
+        printToConsole("Invalid Selection");
     }
 
     @Override
     public void returnBook(String name) {
-        printMessage("Invalid Selection");
+        printToConsole("Invalid Selection");
     }
 }

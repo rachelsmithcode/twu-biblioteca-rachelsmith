@@ -2,10 +2,7 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 
-/**
- * Created by RachelSmith on 20/09/2016.
- */
-public class BookList extends MenuItem implements List {
+public class BookList extends MenuOption {
 
     private String listName = "Book List";
     private ArrayList<BookItem> bookItemList;
@@ -20,32 +17,31 @@ public class BookList extends MenuItem implements List {
         bookItemList = list;
     };
 
-    @Override
-    public void printList() {
+    private void printList() {
 
         for (int i = 0; i < bookItemList.size(); i++) {
             BookItem item = bookItemList.get(i);
-            if (!item.checkedOut()) {
+            if (!item.isInStock()) {
                 item.printDetails();
             }
         }
     }
 
-    public void checkOut(String name) {
+    public void checkOutBook(String name) {
 
         Boolean validBookChoice = false;
 
         for (int i = 0; i < bookItemList.size(); i++) {
             BookItem book = bookItemList.get(i);
-            if (book.returnName() == name && !book.checkedOut()) {
-                book.checkOutBook();
-                printMessage("Thank you! Enjoy the book");
+            if (book.returnName() == name && !book.isInStock()) {
+                book.beCheckedOut();
+                printToConsole("Thank you! Enjoy the book");
                 validBookChoice = true;
                 break;
             }
         }
             if (!validBookChoice) {
-                printMessage("That book is not available.");
+                printToConsole("That book is not available.");
             }
 
     }
@@ -56,15 +52,15 @@ public class BookList extends MenuItem implements List {
 
         for (int i = 0; i < bookItemList.size(); i++) {
             BookItem book = bookItemList.get(i);
-            if (book.returnName() == name && book.checkedOut()) {
+            if (book.returnName() == name && book.isInStock()) {
                 book.beReturned();
-                printMessage("Thank you for returning the book.");
+                printToConsole("Thank you for returning the book.");
                 validBookChoice = true;
                 break;
             }
         }
         if (!validBookChoice) {
-            printMessage("That is not a valid book to return.");
+            printToConsole("That is not a valid book to return.");
         }
 
     }
@@ -72,7 +68,7 @@ public class BookList extends MenuItem implements List {
     @Override
     public void printName() {
 
-        printMessage(listName);
+        printToConsole(listName);
 
     }
 

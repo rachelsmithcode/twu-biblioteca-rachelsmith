@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-public class MenuItemTest {
+public class MenuOptionTest {
 
     //Class now abstract, methods will be tested in concrete classes.
 }

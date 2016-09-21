@@ -6,7 +6,7 @@ public class BookItem extends ConsoleObject {
     private String itemTitle;
     private String itemAuthor;
     private String itemYear;
-    private Boolean isCheckedOut = false;
+    private Boolean inStock = true;
 
     public BookItem(String title, String author, String year) {
         setTitle(title);
@@ -27,15 +27,15 @@ public class BookItem extends ConsoleObject {
     }
 
     private void printTitle() {
-        printMessage("Title: " + itemTitle);
+        printToConsole("Title: " + itemTitle);
     }
 
     public void printAuthor() {
-        printMessage("Author: " + itemAuthor);
+        printToConsole("Author: " + itemAuthor);
     }
 
     private void printYear() {
-        printMessage("Year: " + itemYear);
+        printToConsole("Year: " + itemYear);
     }
 
     public void printDetails() {
@@ -48,15 +48,15 @@ public class BookItem extends ConsoleObject {
         return itemTitle;
     }
 
-    public void checkOutBook() {
-       isCheckedOut = true;
+    public void beCheckedOut() {
+       inStock = false;
     }
 
     public void beReturned() {
-        isCheckedOut = false;
+        inStock = true;
     }
 
-    public Boolean checkedOut() {
-        return isCheckedOut;
+    public Boolean isInStock() {
+        return inStock;
     }
 }

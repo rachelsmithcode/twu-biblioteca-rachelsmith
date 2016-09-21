@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.After;
@@ -11,7 +10,6 @@ import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,10 +19,6 @@ public class QuitTest {
 
     @Rule
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
-
-    private Mockery context = new Mockery() {{
-        setImposteriser(ClassImposteriser.INSTANCE);
-    }};
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -39,7 +33,7 @@ public class QuitTest {
     }
 
     @Test
-    public void returnsListNameAsAString() throws Exception {
+    public void returnsOptionNameAsAString() throws Exception {
 
         assertEquals("Quit", (new Quit().returnName()));
     }
@@ -63,7 +57,7 @@ public class QuitTest {
     @Test
     public void quitCannotBeCheckedOut() throws Exception {
 
-        new Quit().checkOut("Quit");
+        new Quit().checkOutBook("Quit");
         assertEquals("Invalid Selection\n", outContent.toString());
 
     }

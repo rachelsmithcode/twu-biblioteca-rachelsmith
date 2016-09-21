@@ -2,23 +2,20 @@ package com.twu.biblioteca;
 
 
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.io.InputStream;
 
-public class MenuList extends ConsoleObject implements List {
+public class Menu extends ConsoleObject {
 
-    ArrayList<MenuItem> items;
+    ArrayList<MenuOption> items;
     GetInput getInput;
 
-    public MenuList(ArrayList<MenuItem> list) {
+    public Menu(ArrayList<MenuOption> list) {
         items = list;
     }
 
-    @Override
     public void printList() {
 
         for (int i = 0; i < items.size(); i++) {
-            MenuItem item = items.get(i);
+            MenuOption item = items.get(i);
             item.printName();
         }
     }
@@ -32,7 +29,7 @@ public class MenuList extends ConsoleObject implements List {
         Boolean validEntry = false;
 
         for (int i = 0; i < items.size(); i++) {
-            MenuItem item = items.get(i);
+            MenuOption item = items.get(i);
             String itemName = item.returnName();
             if (input == itemName) {
                 item.select();
@@ -41,7 +38,7 @@ public class MenuList extends ConsoleObject implements List {
             }
         }
         if (!validEntry) {
-            printMessage("Please select a valid item!");
+            printToConsole("Please select a valid item!");
         }
     }
 
@@ -52,10 +49,10 @@ public class MenuList extends ConsoleObject implements List {
         String input = requestInput();
 
         for (int i = 0; i < items.size(); i++) {
-            MenuItem bookList = items.get(i);
+            MenuOption bookList = items.get(i);
             String itemName = bookList.returnName();
             if ("Book List" == itemName) {
-                bookList.checkOut(input);
+                bookList.checkOutBook(input);
                 break;
             }
         }
@@ -68,7 +65,7 @@ public class MenuList extends ConsoleObject implements List {
         String input = requestInput();
 
         for (int i = 0; i < items.size(); i++) {
-            MenuItem bookList = items.get(i);
+            MenuOption bookList = items.get(i);
             String itemName = bookList.returnName();
             if ("Book List" == itemName) {
                 bookList.returnBook(input);

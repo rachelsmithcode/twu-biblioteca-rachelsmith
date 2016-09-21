@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 
 abstract public class ConsoleObject {
 
-    public void printMessage(String message) {
+    public void printToConsole(String message) {
         System.out.println(message);
     }
 

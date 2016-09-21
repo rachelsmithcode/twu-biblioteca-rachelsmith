@@ -20,11 +20,21 @@ public class BookListTest {
         setImposteriser(ClassImposteriser.INSTANCE);
     }};
 
+    final BookItem bookItem = context.mock(BookItem.class);
+    ArrayList<BookItem> testList = new ArrayList();
+
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
+    }
+
+    @Before
+    public void createTestArray() {
+
+        testList.add(bookItem);
+
     }
 
     @After
@@ -33,33 +43,7 @@ public class BookListTest {
     }
 
     @Test
-    public void printsTheDetailsOfEachBookInArrayList() throws Exception {
-
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
-        testList.add(bookItem);
-
-        context.checking(new Expectations() {{
-
-            exactly(2).of(bookItem).checkedOut();
-            will(returnValue(false));
-            exactly(2).of(bookItem).printDetails();
-
-        }});
-
-        new BookList(testList).printList();
-    }
-
-    @Test
     public void printsListsNameToConsole() throws Exception {
-
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
-        testList.add(bookItem);
 
         new BookList(testList).printName();
         assertEquals("Book List\n", outContent.toString());
@@ -69,27 +53,17 @@ public class BookListTest {
     @Test
     public void returnsListNameAsAString() throws Exception {
 
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
-        testList.add(bookItem);
-
         assertEquals("Book List", (new BookList(testList).returnName()));
     }
 
     @Test
     public void canBeSelectedAndPrintsDetailsForAllBooksInArrayList() throws Exception {
 
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
         testList.add(bookItem);
 
         context.checking(new Expectations() {{
 
-            exactly(2).of(bookItem).checkedOut();
+            exactly(2).of(bookItem).isInStock();
             will(returnValue(false));
             exactly(2).of(bookItem).printDetails();
 
@@ -101,17 +75,13 @@ public class BookListTest {
     @Test
     public void aCheckedOutBookShouldNotAppearWhenBookListIsSelected() throws Exception {
 
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
         testList.add(bookItem);
 
         context.checking(new Expectations() {{
 
-            oneOf(bookItem).checkedOut();
+            oneOf(bookItem).isInStock();
             will(returnValue(true));
-            oneOf(bookItem).checkedOut();
+            oneOf(bookItem).isInStock();
             will(returnValue(false));
 
             oneOf(bookItem).printDetails();
@@ -124,10 +94,6 @@ public class BookListTest {
     @Test
     public void canCheckOutABookByTitleFromBooksInArrayList() throws Exception {
 
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
         testList.add(bookItem);
 
         context.checking(new Expectations() {{
@@ -136,22 +102,18 @@ public class BookListTest {
             will(returnValue("Gormengast"));
             oneOf(bookItem).returnName();
             will(returnValue("Dune"));
-            oneOf(bookItem).checkOutBook();
-            oneOf(bookItem).checkedOut();
+            oneOf(bookItem).beCheckedOut();
+            oneOf(bookItem).isInStock();
             will(returnValue(false));
 
         }});
 
-        new BookList(testList).checkOut("Dune");
+        new BookList(testList).checkOutBook("Dune");
     }
 
     @Test
     public void printsConfirmationMessageToConsoleOnSuccessfulCheckout() throws Exception {
 
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
         testList.add(bookItem);
 
         context.checking(new Expectations() {{
@@ -160,13 +122,13 @@ public class BookListTest {
             will(returnValue("Gormengast"));
             oneOf(bookItem).returnName();
             will(returnValue("Dune"));
-            oneOf(bookItem).checkOutBook();
-            oneOf(bookItem).checkedOut();
+            oneOf(bookItem).beCheckedOut();
+            oneOf(bookItem).isInStock();
             will(returnValue(false));
 
         }});
 
-        new BookList(testList).checkOut("Dune");
+        new BookList(testList).checkOutBook("Dune");
         assertEquals("Thank you! Enjoy the book\n", outContent.toString());
 
     }
@@ -174,21 +136,16 @@ public class BookListTest {
     @Test
     public void printsErrorMessageIfBookIsAlreadyCheckedOut() throws Exception {
 
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
-
         context.checking(new Expectations() {{
 
             oneOf(bookItem).returnName();
             will(returnValue("Dune"));
-            oneOf(bookItem).checkedOut();
+            oneOf(bookItem).isInStock();
             will(returnValue(true));
 
         }});
 
-        new BookList(testList).checkOut("Dune");
+        new BookList(testList).checkOutBook("Dune");
         assertEquals("That book is not available.\n", outContent.toString());
 
     }
@@ -196,11 +153,6 @@ public class BookListTest {
     @Test
     public void printsErrorMessageIfBookTitleIsNotInTheArray() throws Exception {
 
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
-
         context.checking(new Expectations() {{
 
             oneOf(bookItem).returnName();
@@ -208,7 +160,7 @@ public class BookListTest {
 
         }});
 
-        new BookList(testList).checkOut("I am a cat");
+        new BookList(testList).checkOutBook("I am a cat");
         assertEquals("That book is not available.\n", outContent.toString());
 
     }
@@ -216,10 +168,6 @@ public class BookListTest {
     @Test
     public void canReturnABookByTitleFromBooksInArrayList() throws Exception {
 
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
         testList.add(bookItem);
 
         context.checking(new Expectations() {{
@@ -229,7 +177,7 @@ public class BookListTest {
             oneOf(bookItem).returnName();
             will(returnValue("Dune"));
             oneOf(bookItem).beReturned();
-            oneOf(bookItem).checkedOut();
+            oneOf(bookItem).isInStock();
             will(returnValue(true));
 
         }});
@@ -240,10 +188,6 @@ public class BookListTest {
     @Test
     public void printsConfirmationMessageToConsoleOnSuccessfulReturn() throws Exception {
 
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
         testList.add(bookItem);
 
         context.checking(new Expectations() {{
@@ -253,7 +197,7 @@ public class BookListTest {
             oneOf(bookItem).returnName();
             will(returnValue("Dune"));
             oneOf(bookItem).beReturned();
-            oneOf(bookItem).checkedOut();
+            oneOf(bookItem).isInStock();
             will(returnValue(true));
 
         }});
@@ -266,16 +210,11 @@ public class BookListTest {
     @Test
     public void printsErrorMessageIfReturnedBookWasNotCheckedOut() throws Exception {
 
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
-
         context.checking(new Expectations() {{
 
             oneOf(bookItem).returnName();
             will(returnValue("Dune"));
-            oneOf(bookItem).checkedOut();
+            oneOf(bookItem).isInStock();
             will(returnValue(false));
 
         }});
@@ -287,11 +226,6 @@ public class BookListTest {
 
     @Test
     public void printsErrorMessageIfReturnedBookTitleIsNotInTheArray() throws Exception {
-
-        final BookItem bookItem = context.mock(BookItem.class);
-
-        ArrayList<BookItem> testList = new ArrayList();
-        testList.add(bookItem);
 
         context.checking(new Expectations() {{
 

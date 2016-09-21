@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import org.jmock.Mockery;
-import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,20 +14,20 @@ public class BookItemTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
-    private BookItem testItemOne;
-    private BookItem testItemTwo;
-
-    private void createTestBookOne() {
-        testItemOne = new BookItem("Dune", "Frank Herbert", "1965");
-    }
+    private BookItem testBookOne;
+    private BookItem testBookTwo;
 
     private void createTestBookTwo() {
-        testItemTwo = new BookItem("Gormengast", "Mervyn Peake", "1950");
+        testBookTwo = new BookItem("Gormengast", "Mervyn Peake", "1950");
     }
 
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
+    }
+    @Before
+    public void createTestBookOne() {
+        testBookOne = new BookItem("Dune", "Frank Herbert", "1965");
     }
 
     @After
@@ -41,7 +39,6 @@ public class BookItemTest {
     @Test
     public void printsFullBookDetails() throws Exception {
 
-        createTestBookOne();
         createTestBookTwo();
 
         String result = "Title: Dune\n" +
@@ -51,36 +48,32 @@ public class BookItemTest {
                         "Author: Mervyn Peake\n" +
                         "Year: 1950\n";
 
-        testItemOne.printDetails();
-        testItemTwo.printDetails();
+        testBookOne.printDetails();
+        testBookTwo.printDetails();
         assertEquals(result, outContent.toString());
 
     }
 
     @Test
-    public void returnsListNameAsAString() throws Exception {
+    public void returnsTitleAsAString() throws Exception {
 
-        createTestBookOne();
-
-        assertEquals("Dune", (testItemOne.returnName()));
+        assertEquals("Dune", (testBookOne.returnName()));
     }
 
     @Test
-    public void bookCanBeMarkedAsCheckedOut() throws Exception {
+    public void bookCanBeCheckedOutAndMarkedAsNotInStock() throws Exception {
 
-        createTestBookOne();
-        testItemOne.checkOutBook();
+        testBookOne.beCheckedOut();
 
-        assertEquals(true, (testItemOne.checkedOut()));
+        assertEquals(false, (testBookOne.isInStock()));
     }
 
     @Test
-    public void bookCanBeReturned() throws Exception {
+    public void bookCanBeReturnedAndMarkedInStock() throws Exception {
 
-        createTestBookOne();
-        testItemOne.beReturned();
+        testBookOne.beReturned();
 
-        assertEquals(false, (testItemOne.checkedOut()));
+        assertEquals(true, (testBookOne.isInStock()));
     }
 
 
