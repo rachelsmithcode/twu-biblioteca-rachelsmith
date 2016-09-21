@@ -137,6 +137,8 @@ public class BookListTest {
             oneOf(bookItem).returnName();
             will(returnValue("Dune"));
             oneOf(bookItem).checkOutBook();
+            oneOf(bookItem).checkedOut();
+            will(returnValue(false));
 
         }});
 
@@ -159,11 +161,55 @@ public class BookListTest {
             oneOf(bookItem).returnName();
             will(returnValue("Dune"));
             oneOf(bookItem).checkOutBook();
+            oneOf(bookItem).checkedOut();
+            will(returnValue(false));
 
         }});
 
         new BookList(testList).checkOut("Dune");
         assertEquals("Thank you! Enjoy the book\n", outContent.toString());
+
+    }
+
+    @Test
+    public void printsErrorMessageIfBookIsAlreadyCheckedOut() throws Exception {
+
+        final BookItem bookItem = context.mock(BookItem.class);
+
+        ArrayList<BookItem> testList = new ArrayList();
+        testList.add(bookItem);
+
+        context.checking(new Expectations() {{
+
+            oneOf(bookItem).returnName();
+            will(returnValue("Dune"));
+            oneOf(bookItem).checkedOut();
+            will(returnValue(true));
+
+        }});
+
+        new BookList(testList).checkOut("Dune");
+        assertEquals("That book is not available.\n", outContent.toString());
+
+    }
+
+    @Test
+    public void printsErrorMessageIfBookTitleIsNotInTheArray() throws Exception {
+
+        final BookItem bookItem = context.mock(BookItem.class);
+
+        ArrayList<BookItem> testList = new ArrayList();
+        testList.add(bookItem);
+
+        context.checking(new Expectations() {{
+
+            oneOf(bookItem).returnName();
+            will(returnValue("Dune"));
+
+        }});
+
+        new BookList(testList).checkOut("I am a cat");
+        assertEquals("That book is not available.\n", outContent.toString());
 
     }
 

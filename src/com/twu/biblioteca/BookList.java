@@ -33,13 +33,20 @@ public class BookList extends MenuItem implements List {
 
     public void checkOut(String name) {
 
+        Boolean validBookChoice = false;
+
         for (int i = 0; i < bookItemList.size(); i++) {
             BookItem book = bookItemList.get(i);
-            if (book.returnName() == name) {
+            if (book.returnName() == name && !book.checkedOut()) {
                 book.checkOutBook();
                 printMessage("Thank you! Enjoy the book");
+                validBookChoice = true;
+                break;
             }
         }
+            if (!validBookChoice) {
+                printMessage("That book is not available.");
+            }
 
     }
 
