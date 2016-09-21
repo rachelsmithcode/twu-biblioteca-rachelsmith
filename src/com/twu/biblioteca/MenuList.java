@@ -45,6 +45,27 @@ public class MenuList extends ConsoleObject implements List {
         }
     }
 
+    public void checkOutItem(GetInput getInput) {
+
+
+        saveGetInput(getInput);
+        String input = requestInput();
+        Boolean validEntry = false;
+
+        for (int i = 0; i < items.size(); i++) {
+            MenuItem bookList = items.get(i);
+            String itemName = bookList.returnName();
+            if ("Book List" == itemName) {
+                bookList.checkOut(input);
+                validEntry = true;
+                break;
+            }
+        }
+        if (!validEntry) {
+            printMessage("That book is not available.");
+        }
+    }
+
     private String requestInput() {
         return getInput.returnString();
     }

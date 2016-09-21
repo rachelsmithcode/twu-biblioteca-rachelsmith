@@ -22,4 +22,9 @@ public class Quit extends MenuItem {
     public void select() {
         System.exit(1);
     }
+
+    @Override
+    public void checkOut(String name) {
+        printMessage("Invalid Selection");
+    }
 }

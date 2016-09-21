@@ -6,6 +6,7 @@ public class BookItem extends ConsoleObject {
     private String itemTitle;
     private String itemAuthor;
     private String itemYear;
+    private Boolean isCheckedOut = false;
 
     public BookItem(String title, String author, String year) {
         setTitle(title);
@@ -41,5 +42,17 @@ public class BookItem extends ConsoleObject {
         printTitle();
         printAuthor();
         printYear();
+    }
+
+    public String returnName() {
+        return itemTitle;
+    }
+
+    public void checkOutBook() {
+       isCheckedOut = true;
+    }
+
+    public Boolean checkedOut() {
+        return isCheckedOut;
     }
 }

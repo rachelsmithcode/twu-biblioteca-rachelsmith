@@ -94,37 +94,29 @@ public class BookListTest {
         new BookList(testList).select();
     }
 
+    @Test
+    public void canCheckOutABookByTitleFromBooksInArrayList() throws Exception {
+
+        final BookItem bookItem = context.mock(BookItem.class);
+
+        ArrayList<BookItem> testList = new ArrayList();
+        testList.add(bookItem);
+        testList.add(bookItem);
+
+        context.checking(new Expectations() {{
+
+            oneOf(bookItem).returnName();
+            will(returnValue("Gormengast"));
+            oneOf(bookItem).returnName();
+            will(returnValue("Dune"));
+            oneOf(bookItem).checkOutBook();
+
+        }});
+
+        new BookList(testList).checkOut("Dune");
+    }
+
 
 
 }
 
-
-//    private ArrayList<BookItem> testItems;
-//
-//    @Before
-//    public void createTestArrayList() {
-//        final BookItem item = context.mock(BookItem.class);
-//        testItems = new ArrayList();
-//        testItems.add(item);
-//        testItems.add(item);
-//
-//    }
-//
-//    private Mockery context = new Mockery() {{
-//        setImposteriser(ClassImposteriser.INSTANCE);
-//    }};
-//
-//
-//    @Test
-//    public void printsAListOfAllItemsInArray() throws Exception {
-//
-//        final BookItem item = context.mock(BookItem.class);
-//
-//        context.checking(new Expectations() {{
-//            exactly(2).of (item).printDetails();
-//        }});
-//
-//
-//        new List(testItems).printDetails();
-//
-//    }

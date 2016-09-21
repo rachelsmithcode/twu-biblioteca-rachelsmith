@@ -57,4 +57,22 @@ public class BookItemTest {
 
     }
 
+    @Test
+    public void returnsListNameAsAString() throws Exception {
+
+        createTestBookOne();
+
+        assertEquals("Dune", (testItemOne.returnName()));
+    }
+
+    @Test
+    public void bookCanBeMarkedAsCheckedOut() throws Exception {
+
+        createTestBookOne();
+        testItemOne.checkOutBook();
+
+        assertEquals(true, (testItemOne.checkedOut()));
+    }
+
+
 }

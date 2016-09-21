@@ -60,5 +60,13 @@ public class QuitTest {
 
     }
 
+    @Test
+    public void quitCannotBeCheckedOut() throws Exception {
+
+        new Quit().checkOut("Quit");
+        assertEquals("Invalid Selection\n", outContent.toString());
+
+    }
+
 }
 

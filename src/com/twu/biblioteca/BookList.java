@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class BookList extends MenuItem implements List {
 
     private String listName = "Book List";
-    private ArrayList<BookItem> menuItemList;
+    private ArrayList<BookItem> bookItemList;
 
 
     public BookList(ArrayList<BookItem> list) {
@@ -17,16 +17,27 @@ public class BookList extends MenuItem implements List {
     }
 
     private void setList(ArrayList<BookItem> list){
-        menuItemList = list;
+        bookItemList = list;
     };
 
     @Override
     public void printList() {
 
-        for (int i = 0; i < menuItemList.size(); i++) {
-            BookItem item = menuItemList.get(i);
+        for (int i = 0; i < bookItemList.size(); i++) {
+            BookItem item = bookItemList.get(i);
             item.printDetails();
         }
+    }
+
+    public void checkOut(String name) {
+
+        for (int i = 0; i < bookItemList.size(); i++) {
+            BookItem book = bookItemList.get(i);
+            if (book.returnName() == name) {
+                book.checkOutBook();
+            }
+        }
+
     }
 
     @Override

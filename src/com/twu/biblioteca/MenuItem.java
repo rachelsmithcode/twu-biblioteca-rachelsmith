@@ -8,5 +8,7 @@ abstract public class MenuItem extends ConsoleObject {
 
     abstract public void select();
 
+    abstract public void checkOut(String name);
+
 
 }
