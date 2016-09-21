@@ -143,7 +143,29 @@ public class BookListTest {
         new BookList(testList).checkOut("Dune");
     }
 
+    @Test
+    public void printsConfirmationMessageToConsoleOnSuccessfulCheckout() throws Exception {
 
+        final BookItem bookItem = context.mock(BookItem.class);
+
+        ArrayList<BookItem> testList = new ArrayList();
+        testList.add(bookItem);
+        testList.add(bookItem);
+
+        context.checking(new Expectations() {{
+
+            oneOf(bookItem).returnName();
+            will(returnValue("Gormengast"));
+            oneOf(bookItem).returnName();
+            will(returnValue("Dune"));
+            oneOf(bookItem).checkOutBook();
+
+        }});
+
+        new BookList(testList).checkOut("Dune");
+        assertEquals("Thank you! Enjoy the book\n", outContent.toString());
+
+    }
 
 }
 

@@ -37,6 +37,7 @@ public class BookList extends MenuItem implements List {
             BookItem book = bookItemList.get(i);
             if (book.returnName() == name) {
                 book.checkOutBook();
+                printMessage("Thank you! Enjoy the book");
             }
         }
 
