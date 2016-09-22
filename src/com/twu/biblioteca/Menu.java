@@ -9,6 +9,9 @@ public class Menu extends ConsoleObject {
     GetInput getInput;
     Boolean validEntry = false;
 
+    public static String checkingOut = "Check Out A Book";
+    public static String returningBooks = "Return A Book";
+
     public Menu(ArrayList<MenuOption> list) {
         items = list;
     }
@@ -19,8 +22,8 @@ public class Menu extends ConsoleObject {
             MenuOption item = items.get(i);
             item.printName();
         }
-        printToConsole("Check Out Book");
-        printToConsole("Return Book");
+        printToConsole(checkingOut);
+        printToConsole(returningBooks);
     }
 
 
@@ -50,7 +53,7 @@ public class Menu extends ConsoleObject {
     }
 
     private void checkIfReturnItem(String input) {
-        if (input.equalsIgnoreCase("Return Book")) {
+        if (input.equalsIgnoreCase(returningBooks)) {
             validEntry = true;
             printToConsole("What is the title of the book you wish to return?");
             returnItem(getInput);
@@ -58,7 +61,7 @@ public class Menu extends ConsoleObject {
     }
 
     private void checkIfCheckOutItem(String input) {
-        if (input.equalsIgnoreCase("Check Out Book")) {
+        if (input.equalsIgnoreCase(checkingOut)) {
             validEntry = true;
             printToConsole("What is the title of the book you wish to check out?");
             checkOutItem(getInput);
@@ -67,7 +70,8 @@ public class Menu extends ConsoleObject {
 
     private void checkIfValidEntry() {
         if (!validEntry) {
-            printToConsole("Please select a valid item!");
+            printToConsole("Please select a valid item!\n");
+            printList();
         }
     }
 

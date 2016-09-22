@@ -3,16 +3,17 @@ package com.twu.biblioteca;
 public class Quit extends MenuOption {
 
 
-    private String itemName = "Quit";
+    public static String ITEM_NAME = "Quit";
+    public static String INVALID_SELECTION = "Invalid Selection";
 
     @Override
     public void printName() {
-        printToConsole(itemName);
+        printToConsole(ITEM_NAME);
     }
 
     @Override
     public String returnName() {
-        return itemName;
+        return ITEM_NAME;
     }
 
     @Override
@@ -22,11 +23,11 @@ public class Quit extends MenuOption {
 
     @Override
     public void checkOutBook(String name) {
-        printToConsole("Invalid Selection");
+        printToConsole(INVALID_SELECTION);
     }
 
     @Override
     public void returnBook(String name) {
-        printToConsole("Invalid Selection");
+        printToConsole(INVALID_SELECTION);
     }
 }

@@ -49,12 +49,13 @@ The requirements for the first release of Biblioteca are given below.
 + Program will print a list of menu options
 + Enter text of option you would like to use, note this is not case sensitive but currently does take notice of white spaces. Please enter option text as displayed in menu options list.
 + enter “Book List” to see the list of available books
-+ to check out a book enter “Check Out Book”, you will be asked for the title of the book you wish to check out.
++ to check out a book enter “Check Out A Book”, you will be asked for the title of the book you wish to check out.
 + to return a book enter “Return Book”, you will be asked for the title of the book you wish to return
 + enter “Quit” at any time to quit.
++ If an invalid selection is made the list of menu items will be reprinted to remind user what options are available. 
 
 ###Improvements
 
-+large methods to be broken into smaller methods as many are currently responsible for too much.
-+adjust text in menu display options to make it more intuitive
-+look at removing white space from user input or detecting key words only to make program more user friendly.
++ large methods to be broken into smaller methods as many are currently responsible for too much.
++ adjust text in menu display options to make it more intuitive
++ look at removing white space from user input or detecting key words only to make program more user friendly.

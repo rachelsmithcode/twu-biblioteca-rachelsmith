@@ -35,7 +35,7 @@ public class QuitTest {
     @Test
     public void returnsOptionNameAsAString() throws Exception {
 
-        assertEquals("Quit", (new Quit().returnName()));
+        assertEquals(Quit.ITEM_NAME, (new Quit().returnName()));
     }
 
     @Test
@@ -50,7 +50,7 @@ public class QuitTest {
     public void printsListsNameToConsole() throws Exception {
 
         new Quit().printName();
-        assertEquals("Quit\n", outContent.toString());
+        assertEquals(Quit.ITEM_NAME + "\n", outContent.toString());
 
     }
 
@@ -58,7 +58,7 @@ public class QuitTest {
     public void quitCannotBeCheckedOut() throws Exception {
 
         new Quit().checkOutBook("Quit");
-        assertEquals("Invalid Selection\n", outContent.toString());
+        assertEquals(Quit.INVALID_SELECTION + "\n", outContent.toString());
 
     }
 
@@ -66,7 +66,7 @@ public class QuitTest {
     public void quitCannotBeReturned() throws Exception {
 
         new Quit().returnBook("Quit");
-        assertEquals("Invalid Selection\n", outContent.toString());
+        assertEquals(Quit.INVALID_SELECTION + "\n", outContent.toString());
 
     }
 

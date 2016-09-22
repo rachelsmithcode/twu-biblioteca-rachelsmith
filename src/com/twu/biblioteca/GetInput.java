@@ -7,9 +7,12 @@ import java.util.Scanner;
 
 public class GetInput {
 
+    public static String PROMPT = "\n" +
+                                  ">> ";
+
     public String returnString() {
         String inputLine = null;
-        System.out.print("Select Option:");
+        System.out.print(PROMPT);
         try {
             BufferedReader is = new BufferedReader(
                     new InputStreamReader(System.in));
@@ -20,4 +23,6 @@ public class GetInput {
         }
         return inputLine;
     }
+
+
 }

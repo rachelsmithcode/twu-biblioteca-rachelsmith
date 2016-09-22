@@ -1,9 +1,11 @@
 package com.twu.biblioteca;
 
+import org.hamcrest.CoreMatchers;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -100,11 +102,12 @@ public class MenuTest {
             will(returnValue("Book List"));
             oneOf(menuOption).returnName();
             will(returnValue("Quit"));
+            exactly(2).of(menuOption).printName();
 
         }});
 
         new Menu(testList).menuAction(getInput);
-        assertEquals("Please select a valid item!\n", outContent.toString());
+        Assert.assertThat(outContent.toString(), CoreMatchers.containsString("Please select a valid item!\n"));
     }
 
 

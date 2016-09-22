@@ -29,7 +29,7 @@ public class WelcomeTest {
     public void printsWelcomeMessageToConsole() throws Exception {
 
         new Welcome().printWelcome();
-        assertEquals("Welcome to the Biblioteca Experience\n", outContent.toString());
+        assertEquals((Welcome.WELCOME_MESSAGE + "\n"), outContent.toString());
 
     }
 }
