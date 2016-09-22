@@ -25,13 +25,16 @@ The requirements for the first release of Biblioteca are given below.
 + Quit - As a customer, I would like to continue choosing options until I choose to 'Quit'.
 
 + Checkout Book - As a librarian, I would like customers to be able to check-out a book. Checked out books should not appear in the list of all library books.
-Successful Checkout - As a customer, I would like to know that a book has been checked out by seeing the message “Thank you! Enjoy the book”.
-Unsuccessful Checkout - As a customer, I would like to be notified if the book I tried to check-out is not available by seeing the message, “That book is not available.”, so that I know that I need to select a different book or fix my spelling error.
+
++ Successful Checkout - As a customer, I would like to know that a book has been checked out by seeing the message “Thank you! Enjoy the book”.
+
++ Unsuccessful Checkout - As a customer, I would like to be notified if the book I tried to check-out is not available by seeing the message, “That book is not available.”, so that I know that I need to select a different book or fix my spelling error.
 
 + Return Book - As a librarian, I would like customers to be able to return a book, so that other customers can check that book out. Returned books should appear in the list of library books.
 
 + Successful Return - As a customer, I would like to be notified if the book I am returning belongs to this library by seeing the message, “Thank you for returning the book.”, so that I know I returned the book to the right library.
-Unsuccessful Return - As a customer, I would like to be notified if the book I am returning has not been added to this library by seeing the message, “That is not a valid book to return.”, so that I can return it to the correct library or fix my spelling error.
+
++Unsuccessful Return - As a customer, I would like to be notified if the book I am returning has not been added to this library by seeing the message, “That is not a valid book to return.”, so that I can return it to the correct library or fix my spelling error.
 
 ##Technical Requirements
 
@@ -39,3 +42,19 @@ Unsuccessful Return - As a customer, I would like to be notified if the book I a
 + Biblioteca needs to be a console application. Use your own imagination for any UI elements
 + We do not need a database for this release.
 
+#Running Instructions
+
++run main method from BibliotecaApp
++Program will print welcome message
++Program will print a list of menu options
++Enter text of option you would like to use, note this is not case sensitive but currently does take notice of white spaces. Please enter option text as displayed in menu options list.
++enter “Book List” to see the list of available books
++to check out a book enter “Check Out Book”, you will be asked for the title of the book you wish to check out.
++to return a book enter “Return Book”, you will be asked for the title of the book you wish to return
++enter “Quit” at any time to quit.
+
+###Improvements
+
++large methods to be broken into smaller methods as many are currently responsible for too much.
++adjust text in menu display options to make it more intuitive
++look at removing white space from user input or detecting key words only to make program more user friendly.
