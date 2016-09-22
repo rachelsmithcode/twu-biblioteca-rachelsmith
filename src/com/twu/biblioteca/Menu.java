@@ -7,6 +7,7 @@ public class Menu extends ConsoleObject {
 
     ArrayList<MenuOption> items;
     GetInput getInput;
+    Boolean validEntry = false;
 
     public Menu(ArrayList<MenuOption> list) {
         items = list;
@@ -18,25 +19,53 @@ public class Menu extends ConsoleObject {
             MenuOption item = items.get(i);
             item.printName();
         }
+        printToConsole("Check Out Book");
+        printToConsole("Return Book");
     }
 
 
-    public void selectItem(GetInput getInput) {
+    public void menuAction(GetInput getInput) {
 
 
         saveGetInput(getInput);
         String input = requestInput();
-        Boolean validEntry = false;
+        validEntry = false;
 
+        selectMenuOption(input);
+        checkIfReturnItem(input);
+        checkIfCheckOutItem(input);
+        checkIfValidEntry();
+    }
+
+    private void selectMenuOption(String input) {
         for (int i = 0; i < items.size(); i++) {
             MenuOption item = items.get(i);
             String itemName = item.returnName();
-            if (input == itemName) {
+            if (input.equals(itemName)) {
                 item.select();
                 validEntry = true;
                 break;
             }
         }
+    }
+
+    private void checkIfReturnItem(String input) {
+        if (input.equals("Return Book")) {
+            validEntry = true;
+            printToConsole("What is the title of the book you wish to return?");
+            returnItem(getInput);
+        }
+    }
+
+    private void checkIfCheckOutItem(String input) {
+        if (input.equals("Check Out Book")) {
+            validEntry = true;
+            printToConsole("What is the title of the book you wish to check out?");
+            checkOutItem(getInput);
+        }
+    }
+
+    private void checkIfValidEntry() {
         if (!validEntry) {
             printToConsole("Please select a valid item!");
         }

@@ -21,7 +21,7 @@ public class BookList extends MenuOption {
 
         for (int i = 0; i < bookItemList.size(); i++) {
             BookItem item = bookItemList.get(i);
-            if (!item.isInStock()) {
+            if (item.isInStock()) {
                 item.printDetails();
             }
         }
@@ -33,7 +33,7 @@ public class BookList extends MenuOption {
 
         for (int i = 0; i < bookItemList.size(); i++) {
             BookItem book = bookItemList.get(i);
-            if (book.returnName() == name && !book.isInStock()) {
+            if (book.returnName().equals(name) && book.isInStock()) {
                 book.beCheckedOut();
                 printToConsole("Thank you! Enjoy the book");
                 validBookChoice = true;
@@ -52,7 +52,7 @@ public class BookList extends MenuOption {
 
         for (int i = 0; i < bookItemList.size(); i++) {
             BookItem book = bookItemList.get(i);
-            if (book.returnName() == name && book.isInStock()) {
+            if (book.returnName().equals(name) && !book.isInStock()) {
                 book.beReturned();
                 printToConsole("Thank you for returning the book.");
                 validBookChoice = true;

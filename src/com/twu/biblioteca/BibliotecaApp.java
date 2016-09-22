@@ -11,7 +11,7 @@ public class BibliotecaApp {
     ArrayList<MenuOption> menuOptions = new ArrayList();
     ArrayList<BookItem> bookItems = new ArrayList();
 
-    public void main(String[] args) {
+    public static void main (String[] args) {
         new BibliotecaApp(new Welcome(), new GetInput()).launch();
     }
 
@@ -28,13 +28,13 @@ public class BibliotecaApp {
         Menu menulist = new Menu(menuOptions);
         menulist.printList();
         while (true) {
-            menulist.selectItem(getInput);
+            menulist.menuAction(getInput);
         }
     }
 
     private void createMenuItemList() {
-        menuOptions.add(new Quit());
         menuOptions.add(new BookList(bookItems));
+        menuOptions.add(new Quit());
     }
 
     private void createBookItemList() {

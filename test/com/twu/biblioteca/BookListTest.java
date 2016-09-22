@@ -124,7 +124,7 @@ public class BookListTest {
             will(returnValue("Dune"));
             oneOf(bookItem).beCheckedOut();
             oneOf(bookItem).isInStock();
-            will(returnValue(false));
+            will(returnValue(true));
 
         }});
 
@@ -141,7 +141,7 @@ public class BookListTest {
             oneOf(bookItem).returnName();
             will(returnValue("Dune"));
             oneOf(bookItem).isInStock();
-            will(returnValue(true));
+            will(returnValue(false));
 
         }});
 
@@ -178,7 +178,7 @@ public class BookListTest {
             will(returnValue("Dune"));
             oneOf(bookItem).beReturned();
             oneOf(bookItem).isInStock();
-            will(returnValue(true));
+            will(returnValue(false));
 
         }});
 
@@ -198,7 +198,7 @@ public class BookListTest {
             will(returnValue("Dune"));
             oneOf(bookItem).beReturned();
             oneOf(bookItem).isInStock();
-            will(returnValue(true));
+            will(returnValue(false));
 
         }});
 
@@ -215,7 +215,7 @@ public class BookListTest {
             oneOf(bookItem).returnName();
             will(returnValue("Dune"));
             oneOf(bookItem).isInStock();
-            will(returnValue(false));
+            will(returnValue(true));
 
         }});
 

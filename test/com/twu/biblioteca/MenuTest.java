@@ -68,7 +68,7 @@ public class MenuTest {
 
         }});
 
-            new Menu(testList).selectItem(getInput);
+            new Menu(testList).menuAction(getInput);
     }
 
     @Test
@@ -86,7 +86,7 @@ public class MenuTest {
 
         }});
 
-        new Menu(testList).selectItem(getInput);
+        new Menu(testList).menuAction(getInput);
     }
 
     @Test
@@ -103,7 +103,7 @@ public class MenuTest {
 
         }});
 
-        new Menu(testList).selectItem(getInput);
+        new Menu(testList).menuAction(getInput);
         assertEquals("Please select a valid item!\n", outContent.toString());
     }
 
