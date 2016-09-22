@@ -41,7 +41,7 @@ public class Menu extends ConsoleObject {
         for (int i = 0; i < items.size(); i++) {
             MenuOption item = items.get(i);
             String itemName = item.returnName();
-            if (input.equals(itemName)) {
+            if (input.equalsIgnoreCase(itemName)) {
                 item.select();
                 validEntry = true;
                 break;
@@ -50,7 +50,7 @@ public class Menu extends ConsoleObject {
     }
 
     private void checkIfReturnItem(String input) {
-        if (input.equals("Return Book")) {
+        if (input.equalsIgnoreCase("Return Book")) {
             validEntry = true;
             printToConsole("What is the title of the book you wish to return?");
             returnItem(getInput);
@@ -58,7 +58,7 @@ public class Menu extends ConsoleObject {
     }
 
     private void checkIfCheckOutItem(String input) {
-        if (input.equals("Check Out Book")) {
+        if (input.equalsIgnoreCase("Check Out Book")) {
             validEntry = true;
             printToConsole("What is the title of the book you wish to check out?");
             checkOutItem(getInput);
@@ -80,7 +80,7 @@ public class Menu extends ConsoleObject {
         for (int i = 0; i < items.size(); i++) {
             MenuOption bookList = items.get(i);
             String itemName = bookList.returnName();
-            if ("Book List" == itemName) {
+            if ("Book List".equalsIgnoreCase(itemName)) {
                 bookList.checkOutBook(input);
                 break;
             }
@@ -96,7 +96,7 @@ public class Menu extends ConsoleObject {
         for (int i = 0; i < items.size(); i++) {
             MenuOption bookList = items.get(i);
             String itemName = bookList.returnName();
-            if ("Book List" == itemName) {
+            if ("Book List".equalsIgnoreCase(itemName)) {
                 bookList.returnBook(input);
                 break;
             }
