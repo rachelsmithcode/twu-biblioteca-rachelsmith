@@ -108,7 +108,7 @@ public class Menu extends ConsoleObject {
     }
 
     private String requestInput() {
-        return getInput.returnString();
+        return getInput.returnString(System.in);
     }
 
     private void saveGetInput(GetInput getIn) {

@@ -62,7 +62,7 @@ public class MenuTest {
 
         context.checking(new Expectations() {{
 
-            oneOf(getInput).returnString();
+            oneOf(getInput).returnString(System.in);
             will(returnValue("Book List"));
             oneOf(menuOption).returnName();
             will(returnValue("Book List"));
@@ -78,7 +78,7 @@ public class MenuTest {
 
         context.checking(new Expectations() {{
 
-            oneOf(getInput).returnString();
+            oneOf(getInput).returnString(System.in);
             will(returnValue("Quit"));
             oneOf(menuOption).returnName();
             will(returnValue("Book List"));
@@ -96,7 +96,7 @@ public class MenuTest {
 
         context.checking(new Expectations() {{
 
-            oneOf(getInput).returnString();
+            oneOf(getInput).returnString(System.in);
             will(returnValue("I am a cat"));
             oneOf(menuOption).returnName();
             will(returnValue("Book List"));
@@ -116,7 +116,7 @@ public class MenuTest {
 
         context.checking(new Expectations() {{
 
-            oneOf(getInput).returnString();
+            oneOf(getInput).returnString(System.in);
             will(returnValue("Dune"));
             oneOf(menuOption).returnName();
             will(returnValue("Book List"));
@@ -132,7 +132,7 @@ public class MenuTest {
 
         context.checking(new Expectations() {{
 
-            oneOf(getInput).returnString();
+            oneOf(getInput).returnString(System.in);
             will(returnValue("Dune"));
             oneOf(menuOption).returnName();
             will(returnValue("Book List"));
