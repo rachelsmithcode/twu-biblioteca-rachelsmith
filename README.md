@@ -47,15 +47,17 @@ The requirements for the first release of Biblioteca are given below.
 + Run the “main” method from BibliotecaApp
 + Program will print welcome message
 + Program will print a list of menu options
-+ Enter text of option you would like to use, note this is not case sensitive but currently does take notice of white spaces. Please enter option text as displayed in menu options list.
-+ enter “Book List” to see the list of available books
-+ to check out a book enter “Check Out A Book”, you will be asked for the title of the book you wish to check out.
-+ to return a book enter “Return Book”, you will be asked for the title of the book you wish to return
++ Enter text of option you would like to use, note this currently does take notice of white spaces. You can enter more than one option and it will run in priority order. e.g. “checkout booklist” will print the booklist to the screen and then ask what book you want to checkout whereas if you type “checkout return” or “return checkout” it will always ask what book you want to checkout before it asks what book you wish to return. 
++ If all books have been checked out the booklist will be blank.
++ enter “Book List” or “book list” to see the list of available books
++ to check out a book enter text containing the key word “Checkout”, you will be asked for the title of the book you wish to check out.
++ to return a book enter the keyword “Return”, you will be asked for the title of the book you wish to return
 + enter “Quit” at any time to quit.
-+ If an invalid selection is made the list of menu items will be reprinted to remind user what options are available. 
++ If an invalid selection is made the program will ask you to enter a valid selection. 
 
 ###Improvements
 
-+ large methods to be broken into smaller methods as many are currently responsible for too much.
-+ adjust text in menu display options to make it more intuitive
-+ look at removing white space from user input or detecting key words only to make program more user friendly.
++ Extract some classes from the larger classes, structure/design to be decided.
++ adjust text in menu display options and book title to make it more intuitive
++ Read file for list of books and menu items rather than adding from an array.
++ Add a message to be displayed when all books have been checked out of the library.
