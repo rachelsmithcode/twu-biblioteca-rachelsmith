@@ -6,47 +6,48 @@ import java.util.ArrayList;
 public class BibliotecaApp {
 
     private Welcome welcome;
-    private GetInput getInput;
+    private Input getInput;
 
-    ArrayList<MenuOption> menuOptions = new ArrayList();
-    ArrayList<BookItem> bookItems = new ArrayList();
+    private static final ArrayList<String> menuOptions = new ArrayList();
+    private static final ArrayList<BookItem> bookItems = new ArrayList();
 
     public static void main (String[] args) {
-        new BibliotecaApp(new Welcome(), new GetInput()).launch();
+        new BibliotecaApp(new Welcome()).launch();
     }
 
-    public BibliotecaApp(Welcome wel, GetInput input) {
+    public BibliotecaApp(Welcome wel) {
         welcome = wel;
-        getInput = input;
     }
 
 
     private void launch() {
         welcome.printWelcome();
         createBookItemList();
-        createMenuItemList();
-        Menu menulist = new Menu(menuOptions);
-        menulist.printList();
+        createMenuOptionsList();
+        Menu menu = new Menu(new Options(menuOptions, bookItems), new Input());
+        menu.printMainOptions();
         while (true) {
-            menulist.menuAction(getInput);
+            menu.menuAction();
         }
     }
 
-    private void createMenuItemList() {
-        menuOptions.add(new BookList(bookItems));
-        menuOptions.add(new Quit());
+    private static void createMenuOptionsList() {
+        menuOptions.add("Book List");
+        menuOptions.add("Checkout");
+        menuOptions.add("Return");
+        menuOptions.add("Quit");
     }
 
-    private void createBookItemList() {
+    private static void createBookItemList() {
         bookItems.add(createTestBookOne());
         bookItems.add(createTestBookTwo());
     }
 
-    private BookItem createTestBookOne() {
+    private static BookItem createTestBookOne() {
         return new BookItem("Dune", "Frank Herbert", "1965");
     }
 
-    private BookItem createTestBookTwo() {
+    private static BookItem createTestBookTwo() {
         return new BookItem("Gormengast", "Mervyn Peake", "1950");
     }
 

@@ -3,116 +3,103 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 
-public class Menu extends ConsoleObject {
+public class Menu {
 
-    ArrayList<MenuOption> items;
-    GetInput getInput;
-    Boolean validEntry = false;
+    private static Options options;
+    private static Input inputStream;
+    private Boolean validSelection;
+
 
     public static String checkingOut = "Check Out A Book";
     public static String returningBooks = "Return A Book";
 
-    public Menu(ArrayList<MenuOption> list) {
-        items = list;
+    public Menu(Options menuOptions, Input getInput) {
+        options = menuOptions;
+        inputStream = getInput;
     }
 
-    public void printList() {
+    public void printMainOptions() {
 
-        for (int i = 0; i < items.size(); i++) {
-            MenuOption item = items.get(i);
-            item.printName();
-        }
-        printToConsole(checkingOut);
-        printToConsole(returningBooks);
+        options.printOptions();
+
     }
 
+    private void printToConsole(String message) {
+        System.out.println(message);
+    }
 
-    public void menuAction(GetInput getInput) {
+    public void menuAction() {
 
-
-        saveGetInput(getInput);
         String input = requestInput();
-        validEntry = false;
-
         selectMenuOption(input);
-        checkIfReturnItem(input);
-        checkIfCheckOutItem(input);
-        checkIfValidEntry();
+
     }
+//
+//    private void selectMenuOption(String input) {
+//        Boolean validSelection = false;
+//        ArrayList<String> optionsList = options.getOptions();
+//        for (int i = 0; i < optionsList.size(); i++) {
+//            String option = optionsList.get(i);
+//            if (input.contains((i + 1).toString()) {
+//                runOption(input);
+//                validSelection = true;
+//            }
+//        }
+//            if (!validSelection) {
+//                printToConsole("Please select a valid item!\n");
+//            }
+//    }
 
     private void selectMenuOption(String input) {
-        for (int i = 0; i < items.size(); i++) {
-            MenuOption item = items.get(i);
-            String itemName = item.returnName();
-            if (input.equalsIgnoreCase(itemName)) {
-                item.select();
-                validEntry = true;
-                break;
-            }
-        }
+        validSelection = false;
+        checkIfQuit(input);
+        checkIfPrintBookList(input);
+        checkIfCheckOutItem(input);
+        checkIfReturnItem(input);
+        checkIfValidSelection();
     }
 
-    private void checkIfReturnItem(String input) {
-        if (input.equalsIgnoreCase(returningBooks)) {
-            validEntry = true;
-            printToConsole("What is the title of the book you wish to return?");
-            returnItem(getInput);
+    private void checkIfPrintBookList(String input) {
+        if (input.contains("List") || input.contains("list") ) {
+            validSelection = true;
+            options.printBookList();
         }
     }
 
     private void checkIfCheckOutItem(String input) {
-        if (input.equalsIgnoreCase(checkingOut)) {
-            validEntry = true;
+        if (input.contains("Checkout") || input.contains("checkout")) {
             printToConsole("What is the title of the book you wish to check out?");
-            checkOutItem(getInput);
+            String titleInput = requestInput();
+            validSelection = true;
+            options.checkoutBook(titleInput);
         }
     }
 
-    private void checkIfValidEntry() {
-        if (!validEntry) {
+    private void checkIfReturnItem(String input) {
+        if (input.contains("Return") || input.contains("return")) {
+            printToConsole("What is the title of the book you wish to return?");
+            String titleInput = requestInput();
+            validSelection = true;
+            options.returnBook(titleInput);
+        }
+    }
+
+    private void checkIfQuit(String input) {
+        if (input.contains("Quit") || input.contains("quit")) {
+            validSelection = true;
+            options.quit();
+        }
+    }
+
+    private void checkIfValidSelection() {
+        if (!validSelection) {
             printToConsole("Please select a valid item!\n");
-            printList();
-        }
-    }
-
-    public void checkOutItem(GetInput getInput) {
-
-
-        saveGetInput(getInput);
-        String input = requestInput();
-
-        for (int i = 0; i < items.size(); i++) {
-            MenuOption bookList = items.get(i);
-            String itemName = bookList.returnName();
-            if ("Book List".equalsIgnoreCase(itemName)) {
-                bookList.checkOutBook(input);
-                break;
-            }
-        }
-    }
-
-    public void returnItem(GetInput getInput) {
-
-
-        saveGetInput(getInput);
-        String input = requestInput();
-
-        for (int i = 0; i < items.size(); i++) {
-            MenuOption bookList = items.get(i);
-            String itemName = bookList.returnName();
-            if ("Book List".equalsIgnoreCase(itemName)) {
-                bookList.returnBook(input);
-                break;
-            }
         }
     }
 
     private String requestInput() {
-        return getInput.returnString(System.in);
+        return inputStream.returnString(System.in);
     }
 
-    private void saveGetInput(GetInput getIn) {
-        getInput = getIn;
-    }
 
 }

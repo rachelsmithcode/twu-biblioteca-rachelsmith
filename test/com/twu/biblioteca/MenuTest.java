@@ -23,14 +23,16 @@ public class MenuTest {
         setImposteriser(ClassImposteriser.INSTANCE);
     }};
 
-    final MenuOption menuOption = context.mock(MenuOption.class);
-    ArrayList<MenuOption> testList = new ArrayList<MenuOption>();
-    final GetInput getInput = context.mock(GetInput.class);
+    final Options options = context.mock(Options.class);
+    ArrayList<String> testList = new ArrayList<String>();
+    final Input getInput = context.mock(Input.class);
 
     @Before
     public void createTestArray() {
-        testList.add(menuOption);
-        testList.add(menuOption);
+        testList.add("Book List");
+        testList.add("Checkout");
+        testList.add("Return");
+        testList.add("Quit");
     }
 
 
@@ -46,104 +48,109 @@ public class MenuTest {
 
 
     @Test
-    public void printsTheNameOfEachMenuItemInArrayList() throws Exception {
+    public void printsMainOptions() throws Exception {
 
         context.checking(new Expectations() {{
 
-            exactly(2).of(menuOption).printName();
+            exactly(1).of(options).printOptions();
 
         }});
 
-        new Menu(testList).printList();
+        new Menu(options, getInput).printMainOptions();
     }
 
     @Test
-    public void youCanSelectTheBookListFromTheMenuItemArrayList() throws Exception {
+    public void selectMenuOptionQuit() throws Exception {
 
         context.checking(new Expectations() {{
 
-            oneOf(getInput).returnString(System.in);
-            will(returnValue("Book List"));
-            oneOf(menuOption).returnName();
-            will(returnValue("Book List"));
-            oneOf(menuOption).select();
-
-        }});
-
-            new Menu(testList).menuAction(getInput);
-    }
-
-    @Test
-    public void youCanSelectQuitFromTheMenuItemArrayList() throws Exception {
-
-        context.checking(new Expectations() {{
-
-            oneOf(getInput).returnString(System.in);
+            exactly(1).of(getInput).returnString(System.in);
             will(returnValue("Quit"));
-            oneOf(menuOption).returnName();
-            will(returnValue("Book List"));
-            oneOf(menuOption).returnName();
-            will(returnValue("Quit"));
-            oneOf(menuOption).select();
+            exactly(1).of(options).getOptions();
+            will(returnValue(testList));
+            exactly(1).of(options).quit();
 
         }});
 
-        new Menu(testList).menuAction(getInput);
+        new Menu(options, getInput).menuAction();
+
     }
 
     @Test
-    public void ifUserInputIsRecievedThatDoesNotMatchAnItemAnErrorMessageWillDisplay() throws Exception {
+    public void selectMenuOptionPrintBookList() throws Exception {
 
         context.checking(new Expectations() {{
 
-            oneOf(getInput).returnString(System.in);
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("Book List"));
+            exactly(1).of(options).getOptions();
+            will(returnValue(testList));
+            exactly(1).of(options).printBookList();
+
+        }});
+
+        new Menu(options, getInput).menuAction();
+
+    }
+
+    @Test
+    public void selectMenuOptionCheckoutBook() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("Checkout"));
+            exactly(1).of(options).getOptions();
+            will(returnValue(testList));
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("Dune"));
+            exactly(1).of(options).checkoutBook("Dune");
+
+
+        }});
+
+        new Menu(options, getInput).menuAction();
+
+    }
+
+    @Test
+    public void selectMenuOptionReturnBook() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("Return"));
+            exactly(1).of(options).getOptions();
+            will(returnValue(testList));
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("Dune"));
+            exactly(1).of(options).returnBook("Dune");
+
+
+        }});
+
+        new Menu(options, getInput).menuAction();
+
+    }
+
+
+    @Test
+    public void selectMenuOptionInValidMenuOption() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(1).of(getInput).returnString(System.in);
             will(returnValue("I am a cat"));
-            oneOf(menuOption).returnName();
-            will(returnValue("Book List"));
-            oneOf(menuOption).returnName();
-            will(returnValue("Quit"));
-            exactly(2).of(menuOption).printName();
+            exactly(1).of(options).getOptions();
+            will(returnValue(testList));
 
         }});
 
-        new Menu(testList).menuAction(getInput);
-        Assert.assertThat(outContent.toString(), CoreMatchers.containsString("Please select a valid item!\n"));
+        String result = "Please select a valid item!\n";
+        new Menu(options, getInput).menuAction();
+        Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
+
     }
-
-
-    @Test
-    public void youCanCheckOutABookFromTheBookListArrayInTheMenuItemArrayList() throws Exception {
-
-        context.checking(new Expectations() {{
-
-            oneOf(getInput).returnString(System.in);
-            will(returnValue("Dune"));
-            oneOf(menuOption).returnName();
-            will(returnValue("Book List"));
-            oneOf(menuOption).checkOutBook("Dune");
-
-        }});
-
-        new Menu(testList).checkOutItem(getInput);
-    }
-
-    @Test
-    public void youCanReturnABookFromTheBookListArrayInTheMenuItemArrayList() throws Exception {
-
-        context.checking(new Expectations() {{
-
-            oneOf(getInput).returnString(System.in);
-            will(returnValue("Dune"));
-            oneOf(menuOption).returnName();
-            will(returnValue("Book List"));
-            oneOf(menuOption).returnBook("Dune");
-
-        }});
-
-        new Menu(testList).returnItem(getInput);
-    }
-
-
 
 }
 

@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class GetInput {
+public class Input {
 
 
     public static String PROMPT = "\n" +

@@ -10,7 +10,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class GetInputTest {
+public class InputTest {
 
     //Find a way to input test in a test, so far no good.
 
@@ -35,7 +35,7 @@ public class GetInputTest {
 
         System.setIn(in);
 
-        assertEquals("Test", (new GetInput().returnString(in)));
+        assertEquals("Test", (new Input().returnString(in)));
 
     }
 
@@ -44,8 +44,8 @@ public class GetInputTest {
 
         System.setIn(in);
 
-        new GetInput().returnString(in);
-        assertEquals(GetInput.PROMPT, outContent.toString());
+        new Input().returnString(in);
+        assertEquals(Input.PROMPT, outContent.toString());
 
 
     }

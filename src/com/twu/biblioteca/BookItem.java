@@ -1,17 +1,27 @@
 package com.twu.biblioteca;
 
 
-public class BookItem extends ConsoleObject {
+public class BookItem {
 
     private String itemTitle;
     private String itemAuthor;
     private String itemYear;
     private Boolean inStock = true;
 
+    private void printToConsole(String message) {
+        System.out.println(message);
+    }
+
     public BookItem(String title, String author, String year) {
         setTitle(title);
         setAuthor(author);
         setYear(year);
+    }
+
+    public void printDetails() {
+        printTitle();
+        printAuthor();
+        printYear();
     }
 
     private void setTitle(String title) {
@@ -36,12 +46,6 @@ public class BookItem extends ConsoleObject {
 
     private void printYear() {
         printToConsole("Year: " + itemYear);
-    }
-
-    public void printDetails() {
-        printTitle();
-        printAuthor();
-        printYear();
     }
 
     public String returnName() {
