@@ -57,6 +57,18 @@ public class BookItemTest {
     }
 
     @Test
+    public void returnsAuthorAsAString() throws Exception {
+
+        assertEquals("Frank Herbert", (testBookOne.getAuthor()));
+    }
+
+    @Test
+    public void returnsYearAsAString() throws Exception {
+
+        assertEquals("1965", (testBookOne.getYear()));
+    }
+
+    @Test
     public void bookCanBeCheckedOutAndMarkedAsNotInStock() throws Exception {
 
         testBookOne.beCheckedOut();
