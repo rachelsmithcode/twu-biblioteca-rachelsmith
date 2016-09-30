@@ -30,6 +30,7 @@ public class OptionsTest {
     @Before
     public void addItemsToTestOptionsList() {
         testOptionsList.add("Book List");
+        testOptionsList.add("Movie List");
         testOptionsList.add("Check Out Book");
         testOptionsList.add("Return Book");
         testOptionsList.add("Quit");
@@ -37,7 +38,11 @@ public class OptionsTest {
 
     final BookItem bookItem = context.mock(BookItem.class);
 
+    final MovieItem movieItem = context.mock(MovieItem.class);
+
     public final ArrayList<BookItem> testBookList = new ArrayList();
+
+    public final ArrayList<MovieItem> testMovieList = new ArrayList();
 
     @Before
     public void addItemsToTestBookList() {
@@ -45,6 +50,15 @@ public class OptionsTest {
         testBookList.add(bookItem);
         testBookList.add(bookItem);
     }
+
+    @Before
+    public void addItemsToTestMovieList() {
+
+        testMovieList.add(movieItem);
+        testMovieList.add(movieItem);
+        testMovieList.add(movieItem);
+    }
+
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -62,9 +76,10 @@ public class OptionsTest {
 
     @Test
     public void testPrintOptions() throws Exception  {
-        new Options(testOptionsList, testBookList).printOptions();
+        new Options(testOptionsList, testBookList, testMovieList).printOptions();
 
         String result = "Book List\n" +
+                "Movie List\n" +
                 "Check Out Book\n" +
                 "Return Book\n" +
                 "Quit\n";
@@ -75,14 +90,14 @@ public class OptionsTest {
     @Test
     public void testGetOptions() throws Exception  {
 
-        assertEquals(testOptionsList, new Options(testOptionsList, testBookList).getOptions());
+        assertEquals(testOptionsList, new Options(testOptionsList, testBookList, testMovieList).getOptions());
     }
 
     @Test
     public void testQuit() throws Exception {
 
         exit.expectSystemExit();
-        new Options(testOptionsList, testBookList).quit();
+        new Options(testOptionsList, testBookList, testMovieList).quit();
 
     }
 
@@ -97,7 +112,22 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList).printBookList();
+        new Options(testOptionsList, testBookList, testMovieList).printBookList();
+
+    }
+
+    @Test
+    public void testPrintMovieList() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(3).of(movieItem).isInStock();
+            will(returnValue(true));
+            exactly(3).of(movieItem).printDetails();
+
+        }});
+
+        new Options(testOptionsList, testBookList, testMovieList).printMovieList();
 
     }
 
@@ -116,7 +146,7 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList).checkoutBook("Dune");
+        new Options(testOptionsList, testBookList, testMovieList).checkoutBook("Dune");
         assertEquals("Thank you! Enjoy the book\n", outContent.toString());
 
     }
@@ -135,8 +165,51 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList).checkoutBook("Dune");
+        new Options(testOptionsList, testBookList, testMovieList).checkoutBook("Dune");
         assertEquals("That book is not available.\n", outContent.toString());
+
+    }
+
+    @Test
+    public void testCheckoutMovieFromStock() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(3).of(movieItem).isInStock();
+            will(returnValue(true));
+            oneOf(movieItem).getTitle();
+            will(returnValue("Die Hard"));
+            oneOf(movieItem).getTitle();
+            will(returnValue("Dark Crystal"));
+            oneOf(movieItem).getTitle();
+            will(returnValue("Spy"));
+            exactly(1).of(movieItem).beCheckedOut();
+
+        }});
+
+        new Options(testOptionsList, testBookList, testMovieList).checkoutMovie("Die Hard");
+        assertEquals("Thank you! Enjoy the movie\n", outContent.toString());
+
+    }
+
+    @Test
+    public void testCannotCheckoutMovieThatIsOutOfStock() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            oneOf(movieItem).isInStock();
+            will(returnValue(true));
+            oneOf(movieItem).isInStock();
+            will(returnValue(false));
+            oneOf(movieItem).isInStock();
+            will(returnValue(false));
+            exactly(1).of(movieItem).getTitle();
+            will(returnValue("Dark Crystal"));
+
+        }});
+
+        new Options(testOptionsList, testBookList, testMovieList).checkoutMovie("Die Hard");
+        assertEquals("That movie is not available.\n", outContent.toString());
 
     }
 
@@ -157,7 +230,7 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList).returnBook("Dune");
+        new Options(testOptionsList, testBookList, testMovieList).returnBook("Dune");
         assertEquals("Thank you for returning the book.\n", outContent.toString());
 
     }
@@ -176,8 +249,50 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList).returnBook("Dune");
+        new Options(testOptionsList, testBookList, testMovieList).returnBook("Dune");
         assertEquals("That is not a valid book to return.\n", outContent.toString());
+    }
+
+    @Test
+    public void testReturnMovieFromMovieListThatIsOutOfStock() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(3).of(movieItem).isInStock();
+            will(returnValue(false));
+            oneOf(movieItem).getTitle();
+            will(returnValue("Die Hard"));
+            oneOf(movieItem).getTitle();
+            will(returnValue("Dark Crystal"));
+            oneOf(movieItem).getTitle();
+            will(returnValue("Spy"));
+            exactly(1).of(movieItem).beReturned();
+
+        }});
+
+        new Options(testOptionsList, testBookList, testMovieList).returnMovie("Die Hard");
+        assertEquals("Thank you for returning the movie.\n", outContent.toString());
+
+    }
+
+    @Test
+    public void testCannotReturnMovieFromMovieListThatIsInStockAlready() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            oneOf(movieItem).isInStock();
+            will(returnValue(true));
+            oneOf(movieItem).isInStock();
+            will(returnValue(true));
+            oneOf(movieItem).isInStock();
+            will(returnValue(false));
+            exactly(1).of(movieItem).getTitle();
+            will(returnValue("Spy"));
+
+        }});
+
+        new Options(testOptionsList, testBookList, testMovieList).returnMovie("Die Hard");
+        assertEquals("That is not a valid movie to return.\n", outContent.toString());
     }
 
 

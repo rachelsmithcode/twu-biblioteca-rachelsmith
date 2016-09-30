@@ -30,6 +30,7 @@ public class MenuTest {
     @Before
     public void createTestArray() {
         testList.add("Book List");
+        testList.add("Movie List");
         testList.add("Checkout");
         testList.add("Return");
         testList.add("Quit");
@@ -94,17 +95,54 @@ public class MenuTest {
     }
 
     @Test
+    public void selectMenuOptionPrintMovieList() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("Movie List"));
+            exactly(1).of(options).getOptions();
+            will(returnValue(testList));
+            exactly(1).of(options).printMovieList();
+
+        }});
+
+        new Menu(options, getInput).menuAction();
+
+    }
+
+    @Test
     public void selectMenuOptionCheckoutBook() throws Exception {
 
         context.checking(new Expectations() {{
 
             exactly(1).of(getInput).returnString(System.in);
-            will(returnValue("Checkout"));
+            will(returnValue("Checkout Book"));
             exactly(1).of(options).getOptions();
             will(returnValue(testList));
             exactly(1).of(getInput).returnString(System.in);
             will(returnValue("Dune"));
             exactly(1).of(options).checkoutBook("Dune");
+
+
+        }});
+
+        new Menu(options, getInput).menuAction();
+
+    }
+
+    @Test
+    public void selectMenuOptionCheckoutMovie() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("Checkout Movie"));
+            exactly(1).of(options).getOptions();
+            will(returnValue(testList));
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("Die Hard"));
+            exactly(1).of(options).checkoutMovie("Die Hard");
 
 
         }});
@@ -133,6 +171,26 @@ public class MenuTest {
 
     }
 
+    @Test
+    public void selectMenuOptionReturnMovie() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("Return Movie"));
+            exactly(1).of(options).getOptions();
+            will(returnValue(testList));
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("Die Hard"));
+            exactly(1).of(options).returnMovie("Die Hard");
+
+
+        }});
+
+        new Menu(options, getInput).menuAction();
+
+    }
+
 
     @Test
     public void selectMenuOptionInValidMenuOption() throws Exception {
@@ -153,7 +211,6 @@ public class MenuTest {
     }
 
 }
-
 
 
 

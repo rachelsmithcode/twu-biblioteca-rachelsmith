@@ -30,22 +30,27 @@ public class Menu {
 
     private void selectMenuOption(String input) {
         validSelection = false;
-        checkIfPrintBookList(input);
-        checkIfCheckOutItem(input);
-        checkIfReturnItem(input);
+        checkIfPrintList(input);
+        checkIfCheckOutBookItem(input);
+        checkIfReturnBookItem(input);
+        checkIfCheckOutMovieItem(input);
+        checkIfReturnMovieItem(input);
         checkIfQuit(input);
         checkIfValidSelection();
     }
 
-    private void checkIfPrintBookList(String input) {
-        if (input.contains("List") || input.contains("list") ) {
+    private void checkIfPrintList(String input) {
+        if ((input.contains("List") && input.contains("Book")) || (input.contains("list") && input.contains("book"))) {
             validSelection = true;
             options.printBookList();
+        } else if ((input.contains("List") && input.contains("Movie")) || (input.contains("list") && input.contains("movie"))) {
+            validSelection = true;
+            options.printMovieList();
         }
     }
 
-    private void checkIfCheckOutItem(String input) {
-        if (input.contains("Checkout") || input.contains("checkout")) {
+    private void checkIfCheckOutBookItem(String input) {
+        if ((input.contains("Checkout")  && input.contains("Book")) || (input.contains("checkout") && input.contains("book")) ) {
             printToConsole("What is the title of the book you wish to check out?");
             String titleInput = requestInput();
             validSelection = true;
@@ -53,12 +58,30 @@ public class Menu {
         }
     }
 
-    private void checkIfReturnItem(String input) {
-        if (input.contains("Return") || input.contains("return")) {
+    private void checkIfCheckOutMovieItem(String input) {
+        if ((input.contains("Checkout") && input.contains("Movie"))  || (input.contains("checkout") && input.contains("movie")) ) {
+            printToConsole("What is the title of the movie you wish to check out?");
+            String titleInput = requestInput();
+            validSelection = true;
+            options.checkoutMovie(titleInput);
+        }
+    }
+
+    private void checkIfReturnBookItem(String input) {
+        if ((input.contains("Return") && input.contains("Book"))  || (input.contains("return") && input.contains("book")) ) {
             printToConsole("What is the title of the book you wish to return?");
             String titleInput = requestInput();
             validSelection = true;
             options.returnBook(titleInput);
+        }
+    }
+
+    private void checkIfReturnMovieItem(String input) {
+        if ((input.contains("Return") && input.contains("Movie"))  || (input.contains("return") && input.contains("movie")) ) {
+            printToConsole("What is the title of the movie you wish to return?");
+            String titleInput = requestInput();
+            validSelection = true;
+            options.returnMovie(titleInput);
         }
     }
 
