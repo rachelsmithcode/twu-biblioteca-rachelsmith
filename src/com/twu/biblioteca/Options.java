@@ -22,6 +22,7 @@ public class Options {
     }
 
     public void printOptions() {
+
         for (int i = 0; i < optionsList.size(); i++) {
             printToConsole(optionsList.get(i));
         }
@@ -35,11 +36,10 @@ public class Options {
         System.out.println(message);
     }
 
-    public void quit() {
-        System.exit(1);
-    }
+    public void quit() {System.exit(1);}
 
     public void printBookList() {
+        printColumnHeaders();
         ArrayList<BookItem> booksInStock = returnBooksInStock();
         for (int i = 0; i < booksInStock.size(); i++) {
             BookItem book = booksInStock.get(i);
@@ -55,7 +55,7 @@ public class Options {
 
         for (int i = 0; i < booksInStock.size(); i++) {
             BookItem book = booksInStock.get(i);
-            if (book.returnName().equals(input)) {
+            if (book.getTitle().equals(input)) {
                 book.beCheckedOut();
                 printToConsole("Thank you! Enjoy the book");
                 validBookChoice = true;
@@ -74,7 +74,7 @@ public class Options {
 
         for (int i = 0; i < booksOutOfStock.size(); i++) {
             BookItem book = booksOutOfStock.get(i);
-            if (book.returnName().equals(input)) {
+            if (book.getTitle().equals(input)) {
                 book.beReturned();
                 printToConsole("Thank you for returning the book.");
                 validBookChoice = true;
@@ -112,6 +112,13 @@ public class Options {
         }
         return booksOutOfStock;
 
+    }
 
+    private void printAsColumn(String title, String author, String year) {
+        System.out.print(title + " | " + author + " | " + year + "\n");
+    }
+
+    private void printColumnHeaders() {
+        printAsColumn("Title", "Author", "Year");
     }
 }

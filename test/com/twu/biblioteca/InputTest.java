@@ -12,8 +12,6 @@ import static org.junit.Assert.assertEquals;
 
 public class InputTest {
 
-    //Find a way to input test in a test, so far no good.
-
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayInputStream in = new ByteArrayInputStream("Test".getBytes());
 

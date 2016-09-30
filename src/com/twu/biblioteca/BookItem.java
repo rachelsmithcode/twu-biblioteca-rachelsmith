@@ -8,10 +8,6 @@ public class BookItem {
     private String itemYear;
     private Boolean inStock = true;
 
-    private void printToConsole(String message) {
-        System.out.println(message);
-    }
-
     public BookItem(String title, String author, String year) {
         setTitle(title);
         setAuthor(author);
@@ -19,9 +15,7 @@ public class BookItem {
     }
 
     public void printDetails() {
-        printTitle();
-        printAuthor();
-        printYear();
+        printAsColumn(getTitle(), getAuthor(), getYear());
     }
 
     private void setTitle(String title) {
@@ -36,20 +30,16 @@ public class BookItem {
         itemYear = year;
     }
 
-    private void printTitle() {
-        printToConsole("Title: " + itemTitle);
-    }
-
-    public void printAuthor() {
-        printToConsole("Author: " + itemAuthor);
-    }
-
-    private void printYear() {
-        printToConsole("Year: " + itemYear);
-    }
-
-    public String returnName() {
+    public String getTitle() {
         return itemTitle;
+    }
+
+    public String getAuthor() {
+        return itemAuthor;
+    }
+
+    public String getYear() {
+        return itemYear;
     }
 
     public void beCheckedOut() {
@@ -62,5 +52,9 @@ public class BookItem {
 
     public Boolean isInStock() {
         return inStock;
+    }
+
+    private void printAsColumn(String title, String author, String year) {
+        System.out.print(title + " | " + author + " | " + year + "\n");
     }
 }

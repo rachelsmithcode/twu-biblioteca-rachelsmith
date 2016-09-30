@@ -12,8 +12,14 @@ import static org.junit.Assert.assertEquals;
 
 public class BibliotecaAppTest {
 
-    //Feature test - I need to double check the convensions for these.
+    @Before
+
+    @Test
+    public void featureTest() throws Exception {
 
 
+
+
+    }
 
 }

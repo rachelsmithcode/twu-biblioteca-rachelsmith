@@ -6,18 +6,13 @@ import java.util.ArrayList;
 public class BibliotecaApp {
 
     private Welcome welcome;
-    private Input getInput;
 
     private static final ArrayList<String> menuOptions = new ArrayList();
     private static final ArrayList<BookItem> bookItems = new ArrayList();
 
-    public static void main (String[] args) {
-        new BibliotecaApp(new Welcome()).launch();
-    }
+    public static void main (String[] args) {new BibliotecaApp().launch();}
 
-    public BibliotecaApp(Welcome wel) {
-        welcome = wel;
-    }
+    public BibliotecaApp() {welcome = new Welcome();}
 
 
     private void launch() {
@@ -38,18 +33,11 @@ public class BibliotecaApp {
         menuOptions.add("Quit");
     }
 
-    private static void createBookItemList() {
-        bookItems.add(createTestBookOne());
-        bookItems.add(createTestBookTwo());
-    }
+    private static void createBookItemList() {bookItems.add(createTestBookOne()); bookItems.add(createTestBookTwo());}
 
-    private static BookItem createTestBookOne() {
-        return new BookItem("Dune", "Frank Herbert", "1965");
-    }
+    private static BookItem createTestBookOne() {return new BookItem("Dune", "Frank Herbert", "1965");}
 
-    private static BookItem createTestBookTwo() {
-        return new BookItem("Gormengast", "Mervyn Peake", "1950");
-    }
+    private static BookItem createTestBookTwo() {return new BookItem("Gormengast", "Mervyn Peake", "1950");}
 
 
 

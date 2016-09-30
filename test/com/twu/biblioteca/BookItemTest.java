@@ -41,12 +41,8 @@ public class BookItemTest {
 
         createTestBookTwo();
 
-        String result = "Title: Dune\n" +
-                        "Author: Frank Herbert\n" +
-                        "Year: 1965\n" +
-                        "Title: Gormengast\n" +
-                        "Author: Mervyn Peake\n" +
-                        "Year: 1950\n";
+        String result = "Dune | Frank Herbert | 1965\n" +
+                        "Gormengast | Mervyn Peake | 1950\n";
 
         testBookOne.printDetails();
         testBookTwo.printDetails();
@@ -57,7 +53,7 @@ public class BookItemTest {
     @Test
     public void returnsTitleAsAString() throws Exception {
 
-        assertEquals("Dune", (testBookOne.returnName()));
+        assertEquals("Dune", (testBookOne.getTitle()));
     }
 
     @Test

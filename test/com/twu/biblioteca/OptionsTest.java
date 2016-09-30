@@ -102,15 +102,15 @@ public class OptionsTest {
     }
 
     @Test
-    public void testCheckoutBookFromStock() {
+    public void testCheckoutBookFromStock() throws Exception {
 
         context.checking(new Expectations() {{
 
             exactly(2).of(bookItem).isInStock();
             will(returnValue(true));
-            oneOf(bookItem).returnName();
+            oneOf(bookItem).getTitle();
             will(returnValue("Gormengast"));
-            oneOf(bookItem).returnName();
+            oneOf(bookItem).getTitle();
             will(returnValue("Dune"));
             exactly(1).of(bookItem).beCheckedOut();
 
@@ -122,7 +122,7 @@ public class OptionsTest {
     }
 
     @Test
-    public void testCannotCheckoutBookThatIsOutOfStock() {
+    public void testCannotCheckoutBookThatIsOutOfStock() throws Exception {
 
         context.checking(new Expectations() {{
 
@@ -130,7 +130,7 @@ public class OptionsTest {
             will(returnValue(true));
             oneOf(bookItem).isInStock();
             will(returnValue(false));
-            exactly(1).of(bookItem).returnName();
+            exactly(1).of(bookItem).getTitle();
             will(returnValue("Gormengast"));
 
         }});
@@ -143,15 +143,15 @@ public class OptionsTest {
 
 
     @Test
-    public void testReturnBookFromBookListThatIsOutOfStock() {
+    public void testReturnBookFromBookListThatIsOutOfStock() throws Exception {
 
         context.checking(new Expectations() {{
 
             exactly(2).of(bookItem).isInStock();
             will(returnValue(false));
-            oneOf(bookItem).returnName();
+            oneOf(bookItem).getTitle();
             will(returnValue("Gormengast"));
-            oneOf(bookItem).returnName();
+            oneOf(bookItem).getTitle();
             will(returnValue("Dune"));
             exactly(1).of(bookItem).beReturned();
 
@@ -163,7 +163,7 @@ public class OptionsTest {
     }
 
     @Test
-    public void testCannotReturnBookFromBookListThatIsInStockAlready() {
+    public void testCannotReturnBookFromBookListThatIsInStockAlready() throws Exception {
 
         context.checking(new Expectations() {{
 
@@ -171,7 +171,7 @@ public class OptionsTest {
             will(returnValue(true));
             oneOf(bookItem).isInStock();
             will(returnValue(false));
-            exactly(1).of(bookItem).returnName();
+            exactly(1).of(bookItem).getTitle();
             will(returnValue("Gormengast"));
 
         }});
