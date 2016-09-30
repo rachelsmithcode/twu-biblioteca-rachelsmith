@@ -30,10 +30,10 @@ public class Menu {
 
     private void selectMenuOption(String input) {
         validSelection = false;
-        checkIfQuit(input);
         checkIfPrintBookList(input);
         checkIfCheckOutItem(input);
         checkIfReturnItem(input);
+        checkIfQuit(input);
         checkIfValidSelection();
     }
 
