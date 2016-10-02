@@ -2,7 +2,7 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 
-public class WelcomeScreen {
+public class WelcomeMenu {
 
     private void printToConsole(String message) {
         System.out.println(message);
@@ -12,7 +12,7 @@ public class WelcomeScreen {
 
     public static String INVALID_LOGIN_MESSAGE = "\nYour username or password is does not match our records\n";
 
-    public static String WELCOME_MESSAGE = "\nWelcomeScreen to the Biblioteca Experience\n";
+    public static String WELCOME_MESSAGE = "\nWelcomeMenu to the Biblioteca Experience\n";
 
     public static String ENTER_LIBNO_MESSAGE = "Enter library number (format xxx-xxxx):";
 
@@ -24,7 +24,7 @@ public class WelcomeScreen {
 
     private static Input input;
 
-    public WelcomeScreen(Input getInput, ArrayList<User> users) {
+    public WelcomeMenu(Input getInput, ArrayList<User> users) {
         input = getInput;
         validUsers = users;
     }

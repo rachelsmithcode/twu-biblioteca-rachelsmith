@@ -18,7 +18,7 @@ The requirements for the first release of Biblioteca are given below.
 
 + Book Details - As a customer, I'd like the list of all books to include each books Author and Year Published, so that I can be confident that I have found the book I am looking for. The book listing should have columns for this information.
 
-+ Main Menu  - As a customer, instead of automatically seeing the book list, I would like to see a list of options and be able to choose one. For now, the only option should be 'List Books'. All future options should be added to this menu also.
++ Main Menu  - As a customer, instead of automatically seeing the book list, I would like to see a list of options and be able to choose one. For now, the only option should be 'List Books'. All future options should be added to this mainMenu also.
 
 + Invalid Menu Option - As a customer, I would like to be notified when I choose an invalid option with the message “Select a valid option!”, so that I can know when I need to re-enter my choice.
 
@@ -56,7 +56,7 @@ The requirements for the first release of Biblioteca are given below.
 
 + Run the “main” method from BibliotecaApp
 + Program will print welcome message
-+ Program will print a list of menu options
++ Program will print a list of mainMenu options
 + Enter text of option you would like to use, note this currently does take notice of white spaces. You can enter more than one option and it will run in priority order. e.g. “checkout booklist” will print the booklist to the screen and then ask what book you want to checkout whereas if you type “checkout return” or “return checkout” it will always ask what book you want to checkout before it asks what book you wish to return. 
 + If all books have been checked out the booklist will be blank.
 + enter “Book List” or “book list” to see the list of available books
@@ -68,6 +68,6 @@ The requirements for the first release of Biblioteca are given below.
 ###Improvements
 
 + Extract some classes from the larger classes, structure/design to be decided.
-+ adjust text in menu display options and book title to make it more intuitive
-+ Read file for list of books and menu items rather than adding from an array.
++ adjust text in mainMenu display options and book title to make it more intuitive
++ Read file for list of books and mainMenu items rather than adding from an array.
 + Add a message to be displayed when all books have been checked out of the library.

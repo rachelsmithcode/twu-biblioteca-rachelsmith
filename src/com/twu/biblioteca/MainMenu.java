@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-public class Menu {
+public class MainMenu {
 
     private static Options options;
     private static Input inputStream;
@@ -10,7 +10,7 @@ public class Menu {
     public static String RETURN_MESSAGE = "What is the title of the item you wish to return?";
     public static String INVALID_MESSAGE = "Please select a valid item!\n";
 
-    public Menu(Options menuOptions, Input getInput) {
+    public MainMenu(Options menuOptions, Input getInput) {
         options = menuOptions;
         inputStream = getInput;
     }
@@ -45,24 +45,24 @@ public class Menu {
     }
 
     private void checkIfUserDetails(String input) {
-        if ((input.contains("User")) || (input.contains("user"))) {
+        if (textChecker(input, "user") || textChecker(input, "details")) {
             validSelection = true;
             options.printUserDetails();
         }
     }
 
     private void checkIfPrintList(String input) {
-        if ((input.contains("List") && input.contains("Book")) || (input.contains("list") && input.contains("book"))) {
+        if (textChecker(input, "list") && textChecker(input, "book")) {
             validSelection = true;
             options.printBookList();
-        } else if ((input.contains("List") && input.contains("Movie")) || (input.contains("list") && input.contains("movie"))) {
+        } else if (textChecker(input, "list") && textChecker(input, "movie")) {
             validSelection = true;
             options.printMovieList();
         }
     }
 
     private void checkIfCheckOutBookItem(String input) {
-        if ((input.contains("Checkout")  && input.contains("Book")) || (input.contains("checkout") && input.contains("book")) ) {
+        if (textChecker(input, "checkout") && textChecker(input, "book")) {
             printToConsole(CHECKOUT_MESSAGE);
             String titleInput = requestInput();
             validSelection = true;
@@ -71,7 +71,7 @@ public class Menu {
     }
 
     private void checkIfCheckOutMovieItem(String input) {
-        if ((input.contains("Checkout") && input.contains("Movie"))  || (input.contains("checkout") && input.contains("movie")) ) {
+        if (textChecker(input, "checkout") && textChecker(input, "movie")) {
             printToConsole(CHECKOUT_MESSAGE);
             String titleInput = requestInput();
             validSelection = true;
@@ -80,7 +80,7 @@ public class Menu {
     }
 
     private void checkIfReturnBookItem(String input) {
-        if ((input.contains("Return") && input.contains("Book"))  || (input.contains("return") && input.contains("book")) ) {
+        if (textChecker(input, "return") && textChecker(input, "book")) {
             printToConsole(RETURN_MESSAGE);
             String titleInput = requestInput();
             validSelection = true;
@@ -89,7 +89,7 @@ public class Menu {
     }
 
     private void checkIfReturnMovieItem(String input) {
-        if ((input.contains("Return") && input.contains("Movie"))  || (input.contains("return") && input.contains("movie")) ) {
+        if (textChecker(input, "return") && textChecker(input, "movie")) {
             printToConsole(RETURN_MESSAGE);
             String titleInput = requestInput();
             validSelection = true;
@@ -98,7 +98,7 @@ public class Menu {
     }
 
     private void checkIfQuit(String input) {
-        if (input.contains("Quit") || input.contains("quit")) {
+        if (textChecker(input, "quit")) {
             validSelection = true;
             options.quit();
         }
@@ -107,6 +107,16 @@ public class Menu {
     private void checkIfValidSelection() {
         if (!validSelection) {
             printToConsole(INVALID_MESSAGE);
+        }
+    }
+
+    private Boolean textChecker(String input, String keyWord) {
+        String checkInput = input.toLowerCase();
+        String checkKeyWord = keyWord.toLowerCase();
+        if (checkInput.contains(checkKeyWord)) {
+            return true;
+        } else {
+            return false;
         }
     }
 

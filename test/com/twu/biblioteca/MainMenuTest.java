@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-public class MenuTest {
+public class MainMenuTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -56,7 +56,7 @@ public class MenuTest {
 
         }});
 
-        new Menu(options, getInput).printMainOptions();
+        new MainMenu(options, getInput).printMainOptions();
     }
 
     @Test
@@ -72,7 +72,7 @@ public class MenuTest {
 
         }});
 
-        new Menu(options, getInput).menuAction();
+        new MainMenu(options, getInput).menuAction();
 
     }
 
@@ -89,7 +89,7 @@ public class MenuTest {
 
         }});
 
-        new Menu(options, getInput).menuAction();
+        new MainMenu(options, getInput).menuAction();
 
     }
 
@@ -106,7 +106,7 @@ public class MenuTest {
 
         }});
 
-        new Menu(options, getInput).menuAction();
+        new MainMenu(options, getInput).menuAction();
 
     }
 
@@ -126,8 +126,8 @@ public class MenuTest {
 
         }});
 
-        new Menu(options, getInput).menuAction();
-        String result = Menu.CHECKOUT_MESSAGE;
+        new MainMenu(options, getInput).menuAction();
+        String result = MainMenu.CHECKOUT_MESSAGE;
         Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
     }
 
@@ -147,8 +147,8 @@ public class MenuTest {
 
         }});
 
-        new Menu(options, getInput).menuAction();
-        String result = Menu.CHECKOUT_MESSAGE;
+        new MainMenu(options, getInput).menuAction();
+        String result = MainMenu.CHECKOUT_MESSAGE;
         Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
 
     }
@@ -169,8 +169,8 @@ public class MenuTest {
 
         }});
 
-        new Menu(options, getInput).menuAction();
-        String result = Menu.RETURN_MESSAGE;
+        new MainMenu(options, getInput).menuAction();
+        String result = MainMenu.RETURN_MESSAGE;
         Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
 
     }
@@ -191,8 +191,8 @@ public class MenuTest {
 
         }});
 
-        new Menu(options, getInput).menuAction();
-        String result = Menu.RETURN_MESSAGE;
+        new MainMenu(options, getInput).menuAction();
+        String result = MainMenu.RETURN_MESSAGE;
         Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
 
     }
@@ -210,8 +210,8 @@ public class MenuTest {
 
         }});
 
-        new Menu(options, getInput).menuAction();
-        String result = Menu.INVALID_MESSAGE;
+        new MainMenu(options, getInput).menuAction();
+        String result = MainMenu.INVALID_MESSAGE;
         Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
 
     }

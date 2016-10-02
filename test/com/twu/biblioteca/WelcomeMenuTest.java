@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 
 
-public class WelcomeScreenTest {
+public class WelcomeMenuTest {
 
     private Mockery context = new Mockery() {{
         setImposteriser(ClassImposteriser.INSTANCE);
@@ -46,10 +46,10 @@ public class WelcomeScreenTest {
     @Test
     public void printsWelcomeMessage() throws Exception {
 
-        String result = WelcomeScreen.WELCOME_MESSAGE + "\n";
+        String result = WelcomeMenu.WELCOME_MESSAGE + "\n";
 
 
-        new WelcomeScreen(getInput, testUserList).printWelcome();
+        new WelcomeMenu(getInput, testUserList).printWelcome();
         assertEquals((result), outContent.toString());
 
     }
@@ -70,12 +70,12 @@ public class WelcomeScreenTest {
             will(returnValue("CatsCatsEVERYWHERE!"));
         }});
 
-        String result = WelcomeScreen.REQUEST_LOGIN_MESSAGE + "\n" +
-                WelcomeScreen.ENTER_LIBNO_MESSAGE + "\n" +
-                WelcomeScreen.ENTER_PASSWORD_MESSAGE + "\n";
+        String result = WelcomeMenu.REQUEST_LOGIN_MESSAGE + "\n" +
+                WelcomeMenu.ENTER_LIBNO_MESSAGE + "\n" +
+                WelcomeMenu.ENTER_PASSWORD_MESSAGE + "\n";
 
 
-        new WelcomeScreen(getInput, testUserList).requestLogin();
+        new WelcomeMenu(getInput, testUserList).requestLogin();
         assertEquals((result), outContent.toString());
 
     }
@@ -93,12 +93,12 @@ public class WelcomeScreenTest {
             will(returnValue("123-1235"));
         }});
 
-        String result = WelcomeScreen.REQUEST_LOGIN_MESSAGE + "\n" +
-                WelcomeScreen.ENTER_LIBNO_MESSAGE + "\n" +
-                WelcomeScreen.INVALID_LOGIN_MESSAGE + "\n";
+        String result = WelcomeMenu.REQUEST_LOGIN_MESSAGE + "\n" +
+                WelcomeMenu.ENTER_LIBNO_MESSAGE + "\n" +
+                WelcomeMenu.INVALID_LOGIN_MESSAGE + "\n";
 
 
-        new WelcomeScreen(getInput, testUserList).requestLogin();
+        new WelcomeMenu(getInput, testUserList).requestLogin();
         assertEquals((result), outContent.toString());
 
     }
@@ -118,13 +118,13 @@ public class WelcomeScreenTest {
             will(returnValue("CatsCatsEVERYWHERE!"));
         }});
 
-        String result = WelcomeScreen.REQUEST_LOGIN_MESSAGE + "\n" +
-                WelcomeScreen.ENTER_LIBNO_MESSAGE + "\n" +
-                WelcomeScreen.ENTER_PASSWORD_MESSAGE + "\n" +
-                WelcomeScreen.INVALID_LOGIN_MESSAGE + "\n";
+        String result = WelcomeMenu.REQUEST_LOGIN_MESSAGE + "\n" +
+                WelcomeMenu.ENTER_LIBNO_MESSAGE + "\n" +
+                WelcomeMenu.ENTER_PASSWORD_MESSAGE + "\n" +
+                WelcomeMenu.INVALID_LOGIN_MESSAGE + "\n";
 
 
-        new WelcomeScreen(getInput, testUserList).requestLogin();
+        new WelcomeMenu(getInput, testUserList).requestLogin();
         assertEquals((result), outContent.toString());
 
     }
@@ -144,11 +144,11 @@ public class WelcomeScreenTest {
             will(returnValue("CatsCatsEVERYWHERE!"));
         }});
 
-        WelcomeScreen welcomeScreen = new WelcomeScreen(getInput, testUserList);
-        welcomeScreen.requestLogin();
-        welcomeScreen.returnSessionUser();
+        WelcomeMenu welcomeMenu = new WelcomeMenu(getInput, testUserList);
+        welcomeMenu.requestLogin();
+        welcomeMenu.returnSessionUser();
 
-        assertEquals(welcomeScreen.returnSessionUser(), user);
+        assertEquals(welcomeMenu.returnSessionUser(), user);
 
     }
 
@@ -167,11 +167,11 @@ public class WelcomeScreenTest {
             will(returnValue("CatsCatsEVERYWHERE!"));
         }});
 
-        WelcomeScreen welcomeScreen = new WelcomeScreen(getInput, testUserList);
-        welcomeScreen.requestLogin();
-        welcomeScreen.returnSessionUser();
+        WelcomeMenu welcomeMenu = new WelcomeMenu(getInput, testUserList);
+        welcomeMenu.requestLogin();
+        welcomeMenu.returnSessionUser();
 
-        assertEquals(welcomeScreen.returnSessionUser(), null);
+        assertEquals(welcomeMenu.returnSessionUser(), null);
 
     }
 

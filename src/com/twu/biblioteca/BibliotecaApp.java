@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class BibliotecaApp {
 
-    private WelcomeScreen welcomeScreen;
+    private WelcomeMenu welcomeMenu;
 
     private static final ArrayList<String> menuOptions = new ArrayList();
     private static final ArrayList<BookItem> bookItems = new ArrayList();
@@ -19,29 +19,28 @@ public class BibliotecaApp {
     public BibliotecaApp() {
         createUserList();
         input = new Input();
-        welcomeScreen = new WelcomeScreen(input, userList);
+        welcomeMenu = new WelcomeMenu(input, userList);
     }
 
 
     private void launch() {
-        welcomeScreen.printWelcome();
-        welcomeScreen.requestLogin();
-        User sessionUser = welcomeScreen.returnSessionUser();
-        if (sessionUser != null) {
-            mainMenu(sessionUser);
-        } else {
-            welcomeScreen.requestLogin();
+        welcomeMenu.printWelcome();
+        User sessionUser = welcomeMenu.returnSessionUser();
+        while(sessionUser == null) {
+            welcomeMenu.requestLogin();
+            sessionUser = welcomeMenu.returnSessionUser();
         }
+        mainMenu(sessionUser);
     }
 
     private void mainMenu(User sessionUser) {
             createBookItemList();
             createMovieItemList();
             createMenuOptionsList();
-            Menu menu = new Menu(new Options(menuOptions, bookItems, movieItems, sessionUser), input);
-            menu.printMainOptions();
+            MainMenu mainMenu = new MainMenu(new Options(menuOptions, bookItems, movieItems, sessionUser), input);
+            mainMenu.printMainOptions();
             while (true) {
-                menu.menuAction();
+                mainMenu.menuAction();
             }
     }
 
