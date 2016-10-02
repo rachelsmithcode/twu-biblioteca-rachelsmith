@@ -44,7 +44,19 @@ public class WelcomeScreenTest {
     }
 
     @Test
-    public void asksForUserNameAndPasswordIfCorrectUserNameIsGiven() throws Exception {
+    public void printsWelcomeMessage() throws Exception {
+
+        String result = WelcomeScreen.WELCOME_MESSAGE + "\n";
+
+
+        new WelcomeScreen(getInput, testUserList).printWelcome();
+        assertEquals((result), outContent.toString());
+
+    }
+
+
+    @Test
+    public void asksForLibNoAndPasswordIfCorrectUserNameIsGiven() throws Exception {
 
         context.checking(new Expectations() {{
 
@@ -58,18 +70,64 @@ public class WelcomeScreenTest {
             will(returnValue("CatsCatsEVERYWHERE!"));
         }});
 
-        String result =
-                "\nWelcomeScreen to the Biblioteca Experience\n\n" +
-        "Please login to see options:\n\n" +
-        "Enter username:\n" +
-        "Enter password:\n";
+        String result = WelcomeScreen.REQUEST_LOGIN_MESSAGE + "\n" +
+                WelcomeScreen.ENTER_LIBNO_MESSAGE + "\n" +
+                WelcomeScreen.ENTER_PASSWORD_MESSAGE + "\n";
 
 
-    new WelcomeScreen(getInput, testUserList).requestLogin();
-    assertEquals((result), outContent.toString());
+        new WelcomeScreen(getInput, testUserList).requestLogin();
+        assertEquals((result), outContent.toString());
 
     }
 
+    @Test
+    public void printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("IAMINCORRECT"));
+            exactly(1).of(user).getLibraryNumber();
+            will(returnValue("123-1234"));
+            exactly(1).of(user).getLibraryNumber();
+            will(returnValue("123-1235"));
+        }});
+
+        String result = WelcomeScreen.REQUEST_LOGIN_MESSAGE + "\n" +
+                WelcomeScreen.ENTER_LIBNO_MESSAGE + "\n" +
+                WelcomeScreen.INVALID_LOGIN_MESSAGE + "\n";
+
+
+        new WelcomeScreen(getInput, testUserList).requestLogin();
+        assertEquals((result), outContent.toString());
+
+    }
+
+    @Test
+    public void printsIncorrectLibNoOrPasswordMessageIfIncorrectPasswordEntered() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("123-1234"));
+            exactly(1).of(user).getLibraryNumber();
+            will(returnValue("123-1234"));
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("IAmInCorrect"));
+            exactly(1).of(user).getUserPassword();
+            will(returnValue("CatsCatsEVERYWHERE!"));
+        }});
+
+        String result = WelcomeScreen.REQUEST_LOGIN_MESSAGE + "\n" +
+                WelcomeScreen.ENTER_LIBNO_MESSAGE + "\n" +
+                WelcomeScreen.ENTER_PASSWORD_MESSAGE + "\n" +
+                WelcomeScreen.INVALID_LOGIN_MESSAGE + "\n";
+
+
+        new WelcomeScreen(getInput, testUserList).requestLogin();
+        assertEquals((result), outContent.toString());
+
+    }
 
     @Test
     public void setsSessionUserIfCorrectPasswordIsGivenForUser() throws Exception {
@@ -92,19 +150,30 @@ public class WelcomeScreenTest {
 
         assertEquals(welcomeScreen.returnSessionUser(), user);
 
-
     }
 
-//    @Test
-//    public void setsSessionUserIfCorrectPasswordIsGivenForUser() throws Exception {
-//
-//        String testUserName = "Rachel Smith";
-//        String testUserPassword = "123-1234";
-//
-//        new WelcomeScreen(getInput, testUserList).login(testUserName, testUserPassword);
-//        assertEquals((WelcomeScreen.WELCOME_MESSAGE + "\n"), outContent.toString());
-//
-//    }
+    @Test
+    public void doesNotSetSessionUserIfIncorrectCorrectPasswordIsGivenForUser() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("123-1234"));
+            exactly(1).of(user).getLibraryNumber();
+            will(returnValue("123-1234"));
+            exactly(1).of(getInput).returnString(System.in);
+            will(returnValue("IAMINCORRECT"));
+            exactly(1).of(user).getUserPassword();
+            will(returnValue("CatsCatsEVERYWHERE!"));
+        }});
+
+        WelcomeScreen welcomeScreen = new WelcomeScreen(getInput, testUserList);
+        welcomeScreen.requestLogin();
+        welcomeScreen.returnSessionUser();
+
+        assertEquals(welcomeScreen.returnSessionUser(), null);
+
+    }
 
 
 }

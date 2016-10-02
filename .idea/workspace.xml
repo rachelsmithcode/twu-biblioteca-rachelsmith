@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9709a20d-efe1-4950-bb24-6895cd42cf4f" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Welcome.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/WelcomeScreen.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeScreenTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterPath="$PROJECT_DIR$/out/production/biblioteca/com/twu/biblioteca/BibliotecaApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BookItem.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BookItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/MovieItem.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/MovieItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Options.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Options.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BookItemTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BookItemTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/MenuTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/MovieItemTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/MovieItemTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/OptionsTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/OptionsTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/WelcomeScreen.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/WelcomeScreen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeScreenTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeScreenTest.java" />
     </list>
     <ignored path="biblioteca.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +18,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/biblioteca$All_in_biblioteca.coverage" NAME="All in biblioteca Coverage Results" MODIFIED="1475367631626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/biblioteca$All_in_biblioteca.coverage" NAME="All in biblioteca Coverage Results" MODIFIED="1475440191573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/biblioteca$WelcomeScreenTest.coverage" NAME="WelcomeScreenTest Coverage Results" MODIFIED="1475440171252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.twu.biblioteca.*</FILTER>
+    </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -39,34 +32,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BookItemTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BookItemTest.java">
+      <file leaf-file-name="WelcomeScreen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/WelcomeScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/User.java">
+      <file leaf-file-name="WelcomeScreenTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeScreenTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+            <state relative-caret-position="293">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding>
-                <element signature="e#968#969#0" expanded="true" />
-                <element signature="e#1003#1004#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#539#545#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +58,8 @@
       <file leaf-file-name="BibliotecaApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="141" />
+            <state relative-caret-position="540">
+              <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -141,19 +124,19 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Welcome.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/InputTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/User.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/MovieItem.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BookItem.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/WelcomeScreen.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/MenuTest.java" />
-        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeScreenTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BookItemTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/MovieItemTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Options.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/OptionsTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/WelcomeScreen.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
+        <option value="$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeScreenTest.java" />
       </list>
     </option>
   </component>
@@ -280,7 +263,7 @@
       <recent name="com.twu.biblioteca" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in biblioteca">
+  <component name="RunManager" selected="JUnit.WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered">
     <configuration default="false" name="All in biblioteca" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="biblioteca" />
@@ -302,7 +285,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="OptionsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="WelcomeScreenTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.*" />
@@ -313,7 +296,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.OptionsTest" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.WelcomeScreenTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -328,7 +311,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="OptionsTest.testPrintUserDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="WelcomeScreenTest.asksForUserNameAndPasswordIfCorrectUserNameIsGiven" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.*" />
@@ -339,8 +322,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.OptionsTest" />
-      <option name="METHOD_NAME" value="testPrintUserDetails" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.WelcomeScreenTest" />
+      <option name="METHOD_NAME" value="asksForUserNameAndPasswordIfCorrectUserNameIsGiven" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -354,7 +337,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectPasswordEntered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.*" />
@@ -365,9 +348,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.UserTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.WelcomeScreenTest" />
+      <option name="METHOD_NAME" value="printsIncorrectLibNoOrPasswordMessageIfIncorrectPasswordEntered" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -380,7 +363,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="UserTest.printUserDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.twu.biblioteca.*" />
@@ -391,8 +374,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.UserTest" />
-      <option name="METHOD_NAME" value="printUserDetails" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.WelcomeScreenTest" />
+      <option name="METHOD_NAME" value="printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -822,18 +805,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.All in biblioteca" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.OptionsTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.OptionsTest.testPrintUserDetails" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.UserTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.UserTest.printUserDetails" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.WelcomeScreenTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.WelcomeScreenTest.asksForUserNameAndPasswordIfCorrectUserNameIsGiven" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectPasswordEntered" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in biblioteca" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UserTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UserTest.printUserDetails" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.OptionsTest.testPrintUserDetails" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.OptionsTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectPasswordEntered" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.WelcomeScreenTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.All in biblioteca" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.WelcomeScreenTest.asksForUserNameAndPasswordIfCorrectUserNameIsGiven" />
       </list>
     </recent_temporary>
   </component>
@@ -851,44 +834,44 @@
       <option name="presentableId" value="Default" />
       <updated>1474212175154</updated>
       <workItem from="1475141680126" duration="682000" />
-      <workItem from="1475143052337" duration="73970000" />
+      <workItem from="1475143052337" duration="77206000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_biblioteca - 2016.10.02 at 01h 05m 24s.xml">
+    <history-entry file="All_in_biblioteca - 2016.10.02 at 21h 29m 53s.xml">
       <configuration name="All in biblioteca" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_biblioteca - 2016.10.02 at 01h 08m 41s.xml">
-      <configuration name="All in biblioteca" configurationId="JUnit" />
+    <history-entry file="WelcomeScreenTest - 2016.10.02 at 21h 24m 06s.xml">
+      <configuration name="WelcomeScreenTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_biblioteca - 2016.10.02 at 01h 08m 50s.xml">
-      <configuration name="All in biblioteca" configurationId="JUnit" />
+    <history-entry file="WelcomeScreenTest - 2016.10.02 at 21h 29m 24s.xml">
+      <configuration name="WelcomeScreenTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_biblioteca - 2016.10.02 at 01h 20m 27s.xml">
-      <configuration name="All in biblioteca" configurationId="JUnit" />
+    <history-entry file="WelcomeScreenTest - 2016.10.02 at 21h 29m 32s.xml">
+      <configuration name="WelcomeScreenTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_biblioteca - 2016.10.02 at 01h 20m 33s.xml">
-      <configuration name="All in biblioteca" configurationId="JUnit" />
+    <history-entry file="WelcomeScreenTest - 2016.10.02 at 21h 35m 14s.xml">
+      <configuration name="WelcomeScreenTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionsTest - 2016.10.02 at 01h 05m 04s.xml">
-      <configuration name="OptionsTest" configurationId="JUnit" />
+    <history-entry file="WelcomeScreenTest_asksForUserNameAndPasswordIfCorrectUserNameIsGiven - 2016.10.02 at 21h 29m 18s.xml">
+      <configuration name="WelcomeScreenTest.asksForUserNameAndPasswordIfCorrectUserNameIsGiven" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionsTest_testPrintUserDetails - 2016.10.02 at 01h 11m 11s.xml">
-      <configuration name="OptionsTest.testPrintUserDetails" configurationId="JUnit" />
+    <history-entry file="WelcomeScreenTest_printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered - 2016.10.02 at 21h 37m 39s.xml">
+      <configuration name="WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest - 2016.10.02 at 01h 19m 31s.xml">
-      <configuration name="UserTest" configurationId="JUnit" />
+    <history-entry file="WelcomeScreenTest_printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered - 2016.10.02 at 21h 42m 46s.xml">
+      <configuration name="WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest - 2016.10.02 at 01h 20m 18s.xml">
-      <configuration name="UserTest" configurationId="JUnit" />
+    <history-entry file="WelcomeScreenTest_printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered - 2016.10.02 at 21h 43m 16s.xml">
+      <configuration name="WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectLibNoEntered" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserTest_printUserDetails - 2016.10.02 at 01h 20m 02s.xml">
-      <configuration name="UserTest.printUserDetails" configurationId="JUnit" />
+    <history-entry file="WelcomeScreenTest_printsIncorrectLibNoOrPasswordMessageIfIncorrectPasswordEntered - 2016.10.02 at 21h 37m 32s.xml">
+      <configuration name="WelcomeScreenTest.printsIncorrectLibNoOrPasswordMessageIfIncorrectPasswordEntered" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74652000" />
+    <option name="totallyTimeSpent" value="77888000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -901,9 +884,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282532" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282532" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1245,14 +1229,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Options.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1276,25 +1252,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/WelcomeScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeScreenTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="58" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#539#545#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/MovieItemTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
@@ -1302,6 +1259,34 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-619">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#968#969#0" expanded="true" />
+            <element signature="e#1003#1004#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1313,29 +1298,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="69" column="61" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="141" />
+        <state relative-caret-position="540">
+          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/UserTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/WelcomeScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+        <state relative-caret-position="150">
+          <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/WelcomeScreenTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#1003#1004#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#539#545#0" expanded="true" />
           </folding>
         </state>
       </provider>

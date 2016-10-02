@@ -12,16 +12,19 @@ public class BibliotecaApp {
     private static final ArrayList<MovieItem> movieItems = new ArrayList();
     private static final ArrayList<User> userList = new ArrayList();
 
+    private static Input input;
+
     public static void main (String[] args) {new BibliotecaApp().launch();}
 
     public BibliotecaApp() {
         createUserList();
-        Input input = new Input();
+        input = new Input();
         welcomeScreen = new WelcomeScreen(input, userList);
     }
 
 
     private void launch() {
+        welcomeScreen.printWelcome();
         welcomeScreen.requestLogin();
         User sessionUser = welcomeScreen.returnSessionUser();
         if (sessionUser != null) {
@@ -35,7 +38,7 @@ public class BibliotecaApp {
             createBookItemList();
             createMovieItemList();
             createMenuOptionsList();
-            Menu menu = new Menu(new Options(menuOptions, bookItems, movieItems, sessionUser), new Input());
+            Menu menu = new Menu(new Options(menuOptions, bookItems, movieItems, sessionUser), input);
             menu.printMainOptions();
             while (true) {
                 menu.menuAction();

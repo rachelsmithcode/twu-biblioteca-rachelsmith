@@ -14,6 +14,10 @@ public class WelcomeScreen {
 
     public static String WELCOME_MESSAGE = "\nWelcomeScreen to the Biblioteca Experience\n";
 
+    public static String ENTER_LIBNO_MESSAGE = "Enter library number (format xxx-xxxx):";
+
+    public static String ENTER_PASSWORD_MESSAGE = "Enter password:";
+
     private static ArrayList<User> validUsers;
 
     private static User sessionUser = null ;
@@ -25,14 +29,18 @@ public class WelcomeScreen {
         validUsers = users;
     }
 
+    public void printWelcome() {
+        printToConsole(WELCOME_MESSAGE);
+
+    }
+
     public void requestLogin() {
-        printWelcome();
         printToConsole(REQUEST_LOGIN_MESSAGE);
         enterLibNo();
     }
 
     private void enterLibNo() {
-        printToConsole("Enter username:");
+        printToConsole(ENTER_LIBNO_MESSAGE);
         String libNo = input.returnString(System.in);
         checkLibNo(libNo);
     }
@@ -51,7 +59,7 @@ public class WelcomeScreen {
         }
         if (!validUserName) {
             printToConsole(INVALID_LOGIN_MESSAGE);
-            enterLibNo();
+//            enterLibNo();
         }
     }
 
@@ -63,19 +71,14 @@ public class WelcomeScreen {
 
         } else {
             printToConsole(INVALID_LOGIN_MESSAGE);
-            enterPassword(user);
+//            enterPassword(user);
         }
     }
 
     private void enterPassword(User user) {
-        printToConsole("Enter password:");
+        printToConsole(ENTER_PASSWORD_MESSAGE);
         String enteredPassword = input.returnString(System.in);
         checkpassword(user, enteredPassword);
-    }
-
-    private void printWelcome() {
-        printToConsole(WELCOME_MESSAGE);
-
     }
 
     public User returnSessionUser() {
