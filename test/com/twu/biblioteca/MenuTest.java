@@ -36,7 +36,6 @@ public class MenuTest {
         testList.add("Quit");
     }
 
-
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));

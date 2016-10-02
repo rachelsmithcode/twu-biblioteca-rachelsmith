@@ -9,6 +9,7 @@ public class MovieItem {
     private String itemYear;
     private String itemRating;
     private Boolean inStock = true;
+    private String checkedOutBy;
 
     public MovieItem(String title, String director, String year, String rating) {
         setTitle(title);
@@ -53,17 +54,21 @@ public class MovieItem {
         return itemRating;
     }
 
-    public void beCheckedOut() {
+    public void beCheckedOut(String username) {
         inStock = false;
+        checkedOutBy = username;
     }
 
     public void beReturned() {
         inStock = true;
+        checkedOutBy = null;
     }
 
     public Boolean isInStock() {
         return inStock;
     }
+
+
 
     private void printAsColumn(String title, String director, String year, String rating) {
         System.out.print(title + " | " + director + " | " + year + " | " + rating + "\n");

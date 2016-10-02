@@ -7,6 +7,7 @@ public class BookItem {
     private String itemAuthor;
     private String itemYear;
     private Boolean inStock = true;
+    private String checkedOutBy;
 
     public BookItem(String title, String author, String year) {
         setTitle(title);
@@ -42,12 +43,10 @@ public class BookItem {
         return itemYear;
     }
 
-    public void beCheckedOut() {
-       inStock = false;
-    }
+    public void beCheckedOut(String userName) { inStock = false; checkedOutBy = userName; }
 
     public void beReturned() {
-        inStock = true;
+        inStock = true; checkedOutBy = null;
     }
 
     public Boolean isInStock() {

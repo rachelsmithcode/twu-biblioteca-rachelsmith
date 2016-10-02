@@ -36,6 +36,8 @@ public class OptionsTest {
         testOptionsList.add("Quit");
     }
 
+    final User user = context.mock(User.class);
+
     final BookItem bookItem = context.mock(BookItem.class);
 
     final MovieItem movieItem = context.mock(MovieItem.class);
@@ -76,7 +78,7 @@ public class OptionsTest {
 
     @Test
     public void testPrintOptions() throws Exception  {
-        new Options(testOptionsList, testBookList, testMovieList).printOptions();
+        new Options(testOptionsList, testBookList, testMovieList, user).printOptions();
 
         String result = "Book List\n" +
                 "Movie List\n" +
@@ -90,14 +92,14 @@ public class OptionsTest {
     @Test
     public void testGetOptions() throws Exception  {
 
-        assertEquals(testOptionsList, new Options(testOptionsList, testBookList, testMovieList).getOptions());
+        assertEquals(testOptionsList, new Options(testOptionsList, testBookList, testMovieList, user).getOptions());
     }
 
     @Test
     public void testQuit() throws Exception {
 
         exit.expectSystemExit();
-        new Options(testOptionsList, testBookList, testMovieList).quit();
+        new Options(testOptionsList, testBookList, testMovieList, user).quit();
 
     }
 
@@ -112,7 +114,20 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList, testMovieList).printBookList();
+        new Options(testOptionsList, testBookList, testMovieList, user).printBookList();
+
+    }
+
+    @Test
+    public void testPrintUserDetails() throws Exception {
+
+        context.checking(new Expectations() {{
+
+            exactly(1).of(user).printDetails();
+
+        }});
+
+        new Options(testOptionsList, testBookList, testMovieList, user).printUserDetails();
 
     }
 
@@ -127,7 +142,7 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList, testMovieList).printMovieList();
+        new Options(testOptionsList, testBookList, testMovieList, user).printMovieList();
 
     }
 
@@ -142,11 +157,11 @@ public class OptionsTest {
             will(returnValue("Gormengast"));
             oneOf(bookItem).getTitle();
             will(returnValue("Dune"));
-            exactly(1).of(bookItem).beCheckedOut();
+            exactly(1).of(bookItem).beCheckedOut(exactly(1).of(user).getUserName());
 
         }});
 
-        new Options(testOptionsList, testBookList, testMovieList).checkoutBook("Dune");
+        new Options(testOptionsList, testBookList, testMovieList, user).checkoutBook("Dune");
         assertEquals("Thank you! Enjoy the book\n", outContent.toString());
 
     }
@@ -165,7 +180,7 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList, testMovieList).checkoutBook("Dune");
+        new Options(testOptionsList, testBookList, testMovieList, user).checkoutBook("Dune");
         assertEquals("That book is not available.\n", outContent.toString());
 
     }
@@ -183,11 +198,12 @@ public class OptionsTest {
             will(returnValue("Dark Crystal"));
             oneOf(movieItem).getTitle();
             will(returnValue("Spy"));
-            exactly(1).of(movieItem).beCheckedOut();
+            exactly(1).of(movieItem).beCheckedOut(exactly(1).of(user).getUserName());
+
 
         }});
 
-        new Options(testOptionsList, testBookList, testMovieList).checkoutMovie("Die Hard");
+        new Options(testOptionsList, testBookList, testMovieList, user).checkoutMovie("Die Hard");
         assertEquals("Thank you! Enjoy the movie\n", outContent.toString());
 
     }
@@ -208,7 +224,7 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList, testMovieList).checkoutMovie("Die Hard");
+        new Options(testOptionsList, testBookList, testMovieList, user).checkoutMovie("Die Hard");
         assertEquals("That movie is not available.\n", outContent.toString());
 
     }
@@ -230,7 +246,7 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList, testMovieList).returnBook("Dune");
+        new Options(testOptionsList, testBookList, testMovieList, user).returnBook("Dune");
         assertEquals("Thank you for returning the book.\n", outContent.toString());
 
     }
@@ -249,7 +265,7 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList, testMovieList).returnBook("Dune");
+        new Options(testOptionsList, testBookList, testMovieList, user).returnBook("Dune");
         assertEquals("That is not a valid book to return.\n", outContent.toString());
     }
 
@@ -270,7 +286,7 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList, testMovieList).returnMovie("Die Hard");
+        new Options(testOptionsList, testBookList, testMovieList, user).returnMovie("Die Hard");
         assertEquals("Thank you for returning the movie.\n", outContent.toString());
 
     }
@@ -291,7 +307,7 @@ public class OptionsTest {
 
         }});
 
-        new Options(testOptionsList, testBookList, testMovieList).returnMovie("Die Hard");
+        new Options(testOptionsList, testBookList, testMovieList, user).returnMovie("Die Hard");
         assertEquals("That is not a valid movie to return.\n", outContent.toString());
     }
 

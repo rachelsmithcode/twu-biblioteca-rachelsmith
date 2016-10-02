@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import org.jmock.Expectations;
+import org.jmock.Mockery;
+import org.jmock.lib.legacy.ClassImposteriser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +14,12 @@ import static org.junit.Assert.assertEquals;
 
 
 public class BookItemTest {
+
+    private Mockery context = new Mockery() {{
+        setImposteriser(ClassImposteriser.INSTANCE);
+    }};
+
+    final User user = context.mock(User.class);
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -71,7 +80,14 @@ public class BookItemTest {
     @Test
     public void bookCanBeCheckedOutAndMarkedAsNotInStock() throws Exception {
 
-        testBookOne.beCheckedOut();
+        context.checking(new Expectations() {{
+
+            exactly(1).of(user).getUserName();
+            will(returnValue("Rachel Smith"));
+
+        }});
+
+        testBookOne.beCheckedOut(user.getUserName());
 
         assertEquals(false, (testBookOne.isInStock()));
     }

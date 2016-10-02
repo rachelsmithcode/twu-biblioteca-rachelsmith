@@ -30,6 +30,7 @@ public class Menu {
 
     private void selectMenuOption(String input) {
         validSelection = false;
+        checkIfUserDetails(input);
         checkIfPrintList(input);
         checkIfCheckOutBookItem(input);
         checkIfReturnBookItem(input);
@@ -37,6 +38,13 @@ public class Menu {
         checkIfReturnMovieItem(input);
         checkIfQuit(input);
         checkIfValidSelection();
+    }
+
+    private void checkIfUserDetails(String input) {
+        if ((input.contains("User")) || (input.contains("user"))) {
+            validSelection = true;
+            options.printUserDetails();
+        }
     }
 
     private void checkIfPrintList(String input) {

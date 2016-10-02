@@ -7,12 +7,18 @@ public class Options {
     public static ArrayList<String> optionsList;
     public static ArrayList<BookItem> bookList;
     public static ArrayList<MovieItem> movieList;
+    public static User user;
 
-    public Options(ArrayList<String> options, ArrayList<BookItem> books, ArrayList<MovieItem> movies) {
+    public Options(ArrayList<String> options, ArrayList<BookItem> books, ArrayList<MovieItem> movies, User sessionUser) {
         setOptionsList(options);
         setBookList(books);
         setMovieList(movies);
+        setSessionUser(sessionUser);
 
+    }
+
+    private void setSessionUser(User sessionUser) {
+        user = sessionUser;
     }
 
     private void setOptionsList(ArrayList<String> options) {
@@ -42,6 +48,10 @@ public class Options {
 
     public void quit() {System.exit(1);}
 
+    public void printUserDetails() {
+        user.printDetails();
+    }
+
     public void printBookList() {
         printColumnHeaders();
         ArrayList<BookItem> booksInStock = returnBooksInStock();
@@ -70,7 +80,7 @@ public class Options {
         for (int i = 0; i < booksInStock.size(); i++) {
             BookItem book = booksInStock.get(i);
             if (book.getTitle().equals(input)) {
-                book.beCheckedOut();
+                book.beCheckedOut(user.getUserName());
                 printToConsole("Thank you! Enjoy the book");
                 validBookChoice = true;
                 break;
@@ -90,7 +100,7 @@ public class Options {
         for (int i = 0; i < moviesInStock.size(); i++) {
             MovieItem movie = moviesInStock.get(i);
             if (movie.getTitle().equals(input)) {
-                movie.beCheckedOut();
+                movie.beCheckedOut(user.getUserName());
                 printToConsole("Thank you! Enjoy the movie");
                 validMovieChoice = true;
                 break;
