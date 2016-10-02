@@ -6,6 +6,10 @@ public class Menu {
     private static Input inputStream;
     private Boolean validSelection;
 
+    public static String CHECKOUT_MESSAGE = "What is the title of the item you wish to check out?";
+    public static String RETURN_MESSAGE = "What is the title of the item you wish to return?";
+    public static String INVALID_MESSAGE = "Please select a valid item!\n";
+
     public Menu(Options menuOptions, Input getInput) {
         options = menuOptions;
         inputStream = getInput;
@@ -59,7 +63,7 @@ public class Menu {
 
     private void checkIfCheckOutBookItem(String input) {
         if ((input.contains("Checkout")  && input.contains("Book")) || (input.contains("checkout") && input.contains("book")) ) {
-            printToConsole("What is the title of the book you wish to check out?");
+            printToConsole(CHECKOUT_MESSAGE);
             String titleInput = requestInput();
             validSelection = true;
             options.checkoutBook(titleInput);
@@ -68,7 +72,7 @@ public class Menu {
 
     private void checkIfCheckOutMovieItem(String input) {
         if ((input.contains("Checkout") && input.contains("Movie"))  || (input.contains("checkout") && input.contains("movie")) ) {
-            printToConsole("What is the title of the movie you wish to check out?");
+            printToConsole(CHECKOUT_MESSAGE);
             String titleInput = requestInput();
             validSelection = true;
             options.checkoutMovie(titleInput);
@@ -77,7 +81,7 @@ public class Menu {
 
     private void checkIfReturnBookItem(String input) {
         if ((input.contains("Return") && input.contains("Book"))  || (input.contains("return") && input.contains("book")) ) {
-            printToConsole("What is the title of the book you wish to return?");
+            printToConsole(RETURN_MESSAGE);
             String titleInput = requestInput();
             validSelection = true;
             options.returnBook(titleInput);
@@ -86,7 +90,7 @@ public class Menu {
 
     private void checkIfReturnMovieItem(String input) {
         if ((input.contains("Return") && input.contains("Movie"))  || (input.contains("return") && input.contains("movie")) ) {
-            printToConsole("What is the title of the movie you wish to return?");
+            printToConsole(RETURN_MESSAGE);
             String titleInput = requestInput();
             validSelection = true;
             options.returnMovie(titleInput);
@@ -102,7 +106,7 @@ public class Menu {
 
     private void checkIfValidSelection() {
         if (!validSelection) {
-            printToConsole("Please select a valid item!\n");
+            printToConsole(INVALID_MESSAGE);
         }
     }
 

@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 public class Options {
 
+    public static String THANKYOU_CHECKOUT_MESSAGE = "Thank you! Enjoy the ";
+    public static String THANKYOU_RETURN_MESSAGE = "Thank you for returning the ";
+    public static String INVALID_CHECKOUT_MESSAGE = "That is not a valid item to checkout.";
+    public static String INVALID_RETURN_MESSAGE = "That is not a valid item to return.";
+
     public static ArrayList<String> optionsList;
     public static ArrayList<BookItem> bookList;
     public static ArrayList<MovieItem> movieList;
@@ -81,13 +86,13 @@ public class Options {
             BookItem book = booksInStock.get(i);
             if (book.getTitle().equals(input)) {
                 book.beCheckedOut(user.getUserName());
-                printToConsole("Thank you! Enjoy the book");
+                printToConsole(THANKYOU_CHECKOUT_MESSAGE + "book");
                 validBookChoice = true;
                 break;
             }
         }
         if (!validBookChoice) {
-            printToConsole("That book is not available.");
+            printToConsole(INVALID_CHECKOUT_MESSAGE);
         }
 
     }
@@ -101,13 +106,13 @@ public class Options {
             MovieItem movie = moviesInStock.get(i);
             if (movie.getTitle().equals(input)) {
                 movie.beCheckedOut(user.getUserName());
-                printToConsole("Thank you! Enjoy the movie");
+                printToConsole(THANKYOU_CHECKOUT_MESSAGE + "movie");
                 validMovieChoice = true;
                 break;
             }
         }
         if (!validMovieChoice) {
-            printToConsole("That movie is not available.");
+            printToConsole(INVALID_CHECKOUT_MESSAGE);
         }
 
     }
@@ -120,13 +125,13 @@ public class Options {
             BookItem book = booksOutOfStock.get(i);
             if (book.getTitle().equals(input)) {
                 book.beReturned();
-                printToConsole("Thank you for returning the book.");
+                printToConsole(THANKYOU_RETURN_MESSAGE + "book.");
                 validBookChoice = true;
                 break;
             }
         }
         if (!validBookChoice) {
-            printToConsole("That is not a valid book to return.");
+            printToConsole(INVALID_RETURN_MESSAGE);
         }
 
     }
@@ -139,13 +144,13 @@ public class Options {
             MovieItem movie = moviesOutOfStock.get(i);
             if (movie.getTitle().equals(input)) {
                 movie.beReturned();
-                printToConsole("Thank you for returning the movie.");
+                printToConsole(THANKYOU_RETURN_MESSAGE + "movie.");
                 validMovieChoice = true;
                 break;
             }
         }
         if (!validMovieChoice) {
-            printToConsole("That is not a valid movie to return.");
+            printToConsole(INVALID_RETURN_MESSAGE);
         }
 
     }

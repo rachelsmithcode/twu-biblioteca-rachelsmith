@@ -127,7 +127,8 @@ public class MenuTest {
         }});
 
         new Menu(options, getInput).menuAction();
-
+        String result = Menu.CHECKOUT_MESSAGE;
+        Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
     }
 
     @Test
@@ -147,6 +148,8 @@ public class MenuTest {
         }});
 
         new Menu(options, getInput).menuAction();
+        String result = Menu.CHECKOUT_MESSAGE;
+        Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
 
     }
 
@@ -156,7 +159,7 @@ public class MenuTest {
         context.checking(new Expectations() {{
 
             exactly(1).of(getInput).returnString(System.in);
-            will(returnValue("Return"));
+            will(returnValue("Return Book"));
             exactly(1).of(options).getOptions();
             will(returnValue(testList));
             exactly(1).of(getInput).returnString(System.in);
@@ -167,6 +170,8 @@ public class MenuTest {
         }});
 
         new Menu(options, getInput).menuAction();
+        String result = Menu.RETURN_MESSAGE;
+        Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
 
     }
 
@@ -187,6 +192,8 @@ public class MenuTest {
         }});
 
         new Menu(options, getInput).menuAction();
+        String result = Menu.RETURN_MESSAGE;
+        Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
 
     }
 
@@ -203,8 +210,8 @@ public class MenuTest {
 
         }});
 
-        String result = "Please select a valid item!\n";
         new Menu(options, getInput).menuAction();
+        String result = Menu.INVALID_MESSAGE;
         Assert.assertThat(outContent.toString(), CoreMatchers.containsString(result));
 
     }

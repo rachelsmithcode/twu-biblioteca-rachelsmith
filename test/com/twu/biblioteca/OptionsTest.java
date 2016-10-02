@@ -162,7 +162,7 @@ public class OptionsTest {
         }});
 
         new Options(testOptionsList, testBookList, testMovieList, user).checkoutBook("Dune");
-        assertEquals("Thank you! Enjoy the book\n", outContent.toString());
+        assertEquals(Options.THANKYOU_CHECKOUT_MESSAGE + "book\n", outContent.toString());
 
     }
 
@@ -181,7 +181,8 @@ public class OptionsTest {
         }});
 
         new Options(testOptionsList, testBookList, testMovieList, user).checkoutBook("Dune");
-        assertEquals("That book is not available.\n", outContent.toString());
+        String result = Options.INVALID_CHECKOUT_MESSAGE + "\n";
+        assertEquals(result, outContent.toString());
 
     }
 
@@ -204,7 +205,7 @@ public class OptionsTest {
         }});
 
         new Options(testOptionsList, testBookList, testMovieList, user).checkoutMovie("Die Hard");
-        assertEquals("Thank you! Enjoy the movie\n", outContent.toString());
+        assertEquals(Options.THANKYOU_CHECKOUT_MESSAGE + "movie\n", outContent.toString());
 
     }
 
@@ -225,7 +226,8 @@ public class OptionsTest {
         }});
 
         new Options(testOptionsList, testBookList, testMovieList, user).checkoutMovie("Die Hard");
-        assertEquals("That movie is not available.\n", outContent.toString());
+        String result = Options.INVALID_CHECKOUT_MESSAGE + "\n";
+        assertEquals(result, outContent.toString());
 
     }
 
@@ -247,7 +249,7 @@ public class OptionsTest {
         }});
 
         new Options(testOptionsList, testBookList, testMovieList, user).returnBook("Dune");
-        assertEquals("Thank you for returning the book.\n", outContent.toString());
+        assertEquals(Options.THANKYOU_RETURN_MESSAGE + "book.\n", outContent.toString());
 
     }
 
@@ -266,7 +268,8 @@ public class OptionsTest {
         }});
 
         new Options(testOptionsList, testBookList, testMovieList, user).returnBook("Dune");
-        assertEquals("That is not a valid book to return.\n", outContent.toString());
+        String result = Options.INVALID_RETURN_MESSAGE + "\n";
+        assertEquals(result, outContent.toString());
     }
 
     @Test
@@ -287,7 +290,7 @@ public class OptionsTest {
         }});
 
         new Options(testOptionsList, testBookList, testMovieList, user).returnMovie("Die Hard");
-        assertEquals("Thank you for returning the movie.\n", outContent.toString());
+        assertEquals(Options.THANKYOU_RETURN_MESSAGE + "movie.\n", outContent.toString());
 
     }
 
@@ -308,7 +311,8 @@ public class OptionsTest {
         }});
 
         new Options(testOptionsList, testBookList, testMovieList, user).returnMovie("Die Hard");
-        assertEquals("That is not a valid movie to return.\n", outContent.toString());
+        String result = Options.INVALID_RETURN_MESSAGE + "\n";
+        assertEquals(result, outContent.toString());
     }
 
 
